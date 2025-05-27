@@ -19,3 +19,15 @@ export async function signIn(user: any): Promise<Response> {
   });
   return res;
 }
+
+export async function signUp(user: any): Promise<Response> {
+  const res : any = await fetch(`${API_BASE}api/v1/auth/signup`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+    dispatcher: agent,
+  });
+  return res;
+}

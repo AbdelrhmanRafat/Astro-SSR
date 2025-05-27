@@ -1,0 +1,44 @@
+---
+import { signUp } from "../../../Services/authService";
+
+
+const request = Astro.request;
+
+if (request.method === 'POST') {
+  const formData = await request.formData();
+  const name = formData.get('name')?.toString() ?? '';
+  const email = formData.get('email')?.toString() ?? '';
+  const password = formData.get('password')?.toString() ?? '';
+  const rePassword = formData.get('rePassword')?.toString() ?? '';
+  // Check password match
+  if (password !== rePassword) {
+    return new Response(
+      `<h1>Registration Failed</h1><p>Passwords do not match.</p>`,
+      { status: 400, headers: { 'Content-Type': 'text/html' } }
+    );
+  }
+  
+  const response = await signUp({ name, email, password, rePassword });
+  const data = await response.json();
+
+  if (data.message === 'success') {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        'Location': '/signin',
+      },
+    });
+  } else {
+    return new Response(
+      `<h1>Registration Failed</h1><p>${data.message ?? 'Error occurred during registration.'}</p>`,
+      { status: 400, headers: { 'Content-Type': 'text/html' } }
+    );
+  }
+}
+
+return new Response(
+  `<h1>405 - Method Not Allowed</h1><p>This page only supports POST requests for registration.</p>`,
+  { status: 405, headers: { 'Content-Type': 'text/html' } }
+);
+---
+
