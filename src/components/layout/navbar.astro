@@ -1,5 +1,10 @@
 ---
 import "../../styles/global.css";
+import { getCookie } from "../../lib/cookies";
+
+// Get token from cookies
+const cookies = Astro.request.headers.get("cookie") || "";
+const token = getCookie(cookies, "token");
 ---
 
 <nav class="bg-white shadow-md">
@@ -15,7 +20,11 @@ import "../../styles/global.css";
           <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
           <a href="/cart" class="text-gray-600 hover:text-gray-900">Cart</a>
           <a href="#" class="text-gray-600 hover:text-gray-900">Services</a>
-          <button id="logout-desktop" class="cursor-pointer text-gray-600 hover:text-gray-900 focus:outline-none">Logout</button>
+          {token ? (
+            <button id="logout-desktop" class="cursor-pointer text-gray-600 hover:text-gray-900 focus:outline-none">Logout</button>
+          ) : (
+            <a href="/signin" class="text-gray-600 hover:text-gray-900">Sign In</a>
+          )}
         </div>
   
         <!-- Mobile Menu Button -->
@@ -36,30 +45,32 @@ import "../../styles/global.css";
       <a href="#" class="block text-gray-700 hover:text-gray-900">Home</a>
       <a href="/cart" class="block text-gray-700 hover:text-gray-900">Cart</a>
       <a href="#" class="block text-gray-700 hover:text-gray-900">Services</a>
-      <button id="logout-mobile" class="block text-gray-700 hover:text-gray-900 w-full text-left focus:outline-none">Logout</button>
+      {token ? (
+        <button id="logout-mobile" class="block text-gray-700 hover:text-gray-900 w-full text-left focus:outline-none">Logout</button>
+      ) : (
+        <a href="/signin" class="block text-gray-700 hover:text-gray-900">Sign In</a>
+      )}
     </div>
   </nav>
+
+<script>
+  // Handle mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
   
-  <script>
-    import { removeCookie } from '../../lib/cookies';
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    if(toggle !== null){
-        toggle.addEventListener('click', () => {
-            if(menu !== null){
-                menu.classList.toggle('hidden');
-            }});
-        }
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
 
-    function handleLogout() {
-      // Remove the token cookie (adjust name if needed)
-      document.cookie = removeCookie('token', { path: '/' });
-      window.location.href = '/signin';
-    }
+  // Handle logout for both desktop and mobile
+  const logoutDesktop = document.getElementById('logout-desktop');
+  const logoutMobile = document.getElementById('logout-mobile');
 
-    const logoutDesktop = document.getElementById('logout-desktop');
-    const logoutMobile = document.getElementById('logout-mobile');
-    if (logoutDesktop) logoutDesktop.addEventListener('click', handleLogout);
-    if (logoutMobile) logoutMobile.addEventListener('click', handleLogout);
-  </script>
+  const handleLogout = () => {
+    window.location.href = '/server/auth/logout';
+  };
+
+  logoutDesktop?.addEventListener('click', handleLogout);
+  logoutMobile?.addEventListener('click', handleLogout);
+</script>
   

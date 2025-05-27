@@ -1,0 +1,15 @@
+---
+import { removeCookie } from "../../../lib/cookies";
+
+// Remove the token cookie
+const cookie = removeCookie('token', { path: '/' });
+
+// Redirect to home page
+return new Response(null, {
+  status: 302,
+  headers: {
+    'Set-Cookie': cookie,
+    'Location': '/',
+  },
+}); 
+---
