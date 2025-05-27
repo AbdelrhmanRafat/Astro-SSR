@@ -1,0 +1,18 @@
+---
+import LoginForm from "../../components/forms/LoginForm.astro"
+import "../../styles/global.css"
+---
+
+<div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-100 to-gray-200 px-4">
+  <div class="bg-white p-8 sm:p-10 rounded-2xl shadow-xl w-full max-w-md">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Welcome Back</h2>
+    
+    <LoginForm />
+
+    <p class="text-sm text-center text-gray-500 mt-6">
+      Don't have an account?
+      <a href="#" class="text-green-600 hover:underline font-medium">Sign Up</a>
+    </p>
+  </div>
+</div>
+import LoginForm from "../../components/forms/LoginForm.astro";

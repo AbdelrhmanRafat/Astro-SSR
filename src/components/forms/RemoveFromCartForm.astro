@@ -1,0 +1,12 @@
+---
+export interface Props {
+  productId: string;
+}
+const { productId } = Astro.props;
+---
+<form method="POST" action="/server/cart/delete-fromCart-form">
+  <input type="hidden" name="productId" value={productId} />
+  <button type="submit" class="cursor-pointer text-red-600 mt-2 text-sm font-medium flex items-center gap-1 hover:underline">
+    Remove
+  </button>
+</form>

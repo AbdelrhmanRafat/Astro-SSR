@@ -1,0 +1,27 @@
+---
+export interface Props {
+  productId: string;
+  isLoggedIn: boolean;
+  returnUrl: string;
+}
+const { productId, isLoggedIn, returnUrl } = Astro.props;
+---
+{isLoggedIn ? (
+  <form method="POST" action="/server/cart/add-product-form">
+    <input class="hidden" type="hidden" name="productId" value={productId} />
+    <input type="hidden" name="returnUrl" value={returnUrl} />
+    <button
+      type="submit"
+      class="mt-4 cursor-pointer w-full bg-gradient-to-r from-main to-green-600 text-white py-2 rounded-lg shadow hover:brightness-110 transition-all duration-300"
+    >
+      Add to Cart
+    </button>
+  </form>
+) : (
+  <a
+    href="/signin"
+    class="mt-4 block text-center w-full bg-gradient-to-r from-main to-green-600 text-white py-2 rounded-lg shadow hover:brightness-110 transition-all duration-300"
+  >
+    Add to Cart
+  </a>
+)}

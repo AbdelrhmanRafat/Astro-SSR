@@ -1,0 +1,65 @@
+---
+import "../../styles/global.css";
+---
+
+<nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="/" class="text-xl font-bold text-gray-800">MyLogo</a>
+        </div>
+  
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
+          <a href="/cart" class="text-gray-600 hover:text-gray-900">Cart</a>
+          <a href="#" class="text-gray-600 hover:text-gray-900">Services</a>
+          <button id="logout-desktop" class="cursor-pointer text-gray-600 hover:text-gray-900 focus:outline-none">Logout</button>
+        </div>
+  
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-1 bg-white">
+      <a href="#" class="block text-gray-700 hover:text-gray-900">Home</a>
+      <a href="/cart" class="block text-gray-700 hover:text-gray-900">Cart</a>
+      <a href="#" class="block text-gray-700 hover:text-gray-900">Services</a>
+      <button id="logout-mobile" class="block text-gray-700 hover:text-gray-900 w-full text-left focus:outline-none">Logout</button>
+    </div>
+  </nav>
+  
+  <script>
+    import { removeCookie } from '../../lib/cookies';
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if(toggle !== null){
+        toggle.addEventListener('click', () => {
+            if(menu !== null){
+                menu.classList.toggle('hidden');
+            }});
+        }
+
+    function handleLogout() {
+      // Remove the token cookie (adjust name if needed)
+      document.cookie = removeCookie('token', { path: '/' });
+      window.location.href = '/signin';
+    }
+
+    const logoutDesktop = document.getElementById('logout-desktop');
+    const logoutMobile = document.getElementById('logout-mobile');
+    if (logoutDesktop) logoutDesktop.addEventListener('click', handleLogout);
+    if (logoutMobile) logoutMobile.addEventListener('click', handleLogout);
+  </script>
+  

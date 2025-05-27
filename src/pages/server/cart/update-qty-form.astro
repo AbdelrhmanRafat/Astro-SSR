@@ -1,0 +1,49 @@
+---
+import { updateProductQty } from "../../../Services/cart.Service";
+
+/**
+ * Form handler for updating product quantity in cart
+ * Processes POST requests to update product quantities
+ */
+
+// Get request and cookies objects from Astro
+const request = Astro.request;
+const cookies = Astro.cookies;
+
+// Handle POST requests for quantity updates
+if (request.method === "POST") {
+  // Extract form data
+  const formData = await request.formData();
+  const productId = formData.get("productId")?.toString() ?? "";
+  const count = parseInt(formData.get("count")?.toString() ?? "1");
+  const token = cookies.get("token")?.value;
+
+  // Verify user authentication
+  if (!token) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+
+  try {
+    // Update product quantity
+    await updateProductQty(productId, count, token);
+
+    // Redirect back to cart page after successful update
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: "/cart",
+      },
+    });
+  } catch (err : any) {
+    // Return error page if update fails
+    return new Response(`<h1>Update Failed</h1><p>${err.message}</p>`, {
+      status: 500,
+      headers: { "Content-Type": "text/html" },
+    });
+  }
+}
+---
+
+<!-- Display error message for non-POST requests -->
+<h1>405 - Method Not Allowed</h1>
+<p>This page only supports POST requests.</p>

@@ -1,0 +1,48 @@
+---
+/**
+ * Shopping Cart Page
+ * Displays user's cart items and allows quantity management
+ */
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+import { getLoggedUserCart } from "../../Services/cart.Service";
+import Cart from "../../components/Features/Cart/Cart.astro";
+
+
+// Initialize cart state variables
+let cart = null;
+let products = [];
+let bGetCartItems = false;
+
+// Get authentication token from cookies
+const token = Astro.cookies.get("token")?.value;
+
+// Fetch cart data if user is authenticated
+if (token) {
+  try {
+    const cartData = await getLoggedUserCart(token);
+    cart = cartData.data;
+    products = cartData.data.products || [];
+    bGetCartItems = true;
+  } catch (err) {
+    bGetCartItems = false;
+  }
+}
+---
+<Layout>
+  <div class="max-w-5xl mx-auto p-4">
+    {
+      bGetCartItems ? (
+        <Cart cart={cart} products={products} />
+      ) : (
+        // Empty Cart State
+        <div class="flex justify-center items-center h-96" />
+      )
+    }
+  </div>
+</Layout>
+
+<script>
+import { setupFormLoading } from '../../components/ui/loadingOverlay';
+setupFormLoading();
+</script>

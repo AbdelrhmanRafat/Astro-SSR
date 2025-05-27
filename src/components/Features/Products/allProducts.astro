@@ -1,0 +1,47 @@
+---
+import ProductCard from "./ProductCard.astro";
+
+const { products } = Astro.props;
+const currentPage = products.metadata.currentPage;
+const totalPages = products.metadata.numberOfPages;
+---
+
+<div class="w-11/12 py-12 mx-auto">
+  <div class="text-center">
+    <div class="row grid grid-cols-2 md:grid-cols-4 gap-3 py-3 overflow-auto">
+      {products.data.map((product: any) => <ProductCard product={product} />)}
+    </div>
+
+    <!-- Pagination info -->
+    <div class="text-sm text-gray-600 my-2">
+      Page {currentPage} of {totalPages}
+    </div>
+
+    <!-- Pagination buttons -->
+    <div class="flex justify-center items-center gap-3 my-3 p-2">
+      <!-- Previous Button -->
+      <a
+        href={currentPage === 1 ? "#" : `?page=${currentPage - 1}`}
+        class={`btn bg-green-600 py-2 px-3 rounded text-white transition-opacity duration-200 ${
+          currentPage === 1
+            ? "opacity-50 pointer-events-none cursor-not-allowed"
+            : ""
+        }`}
+      >
+        Prev
+      </a>
+
+      <!-- Next Button -->
+      <a
+        href={currentPage === totalPages ? "#" : `?page=${currentPage + 1}`}
+        class={`btn bg-green-600 py-2 px-3 rounded text-white transition-opacity duration-200 ${
+          currentPage === totalPages
+            ? "opacity-50 pointer-events-none cursor-not-allowed"
+            : ""
+        }`}
+      >
+        Next
+      </a>
+    </div>
+  </div>
+</div>

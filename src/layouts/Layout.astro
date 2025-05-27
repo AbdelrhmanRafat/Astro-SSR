@@ -1,0 +1,27 @@
+---
+import Navbar from "../components/layout/navbar.astro"
+import ToastManager from "../components/ui/ToastManager"
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+       <Navbar />
+		<slot />
+		<ToastManager client:load />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

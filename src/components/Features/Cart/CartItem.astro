@@ -1,0 +1,36 @@
+---
+import CartQuantityControls from "../../forms/CartQuantityControls.astro";
+import RemoveFromCartForm from "../../forms/RemoveFromCartForm.astro";
+
+const { product } = Astro.props;
+---
+
+<div class="grid grid-cols-12 gap-4 items-center">
+  {/* Product Image */}
+  <div class="col-span-2 sm:col-span-1">
+    <img
+      src={product.product.imageCover}
+      alt={product.product.title}
+      class="w-full rounded-md"
+    />
+  </div>
+
+  {/* Product Details and Controls */}
+  <div class="col-span-10 sm:col-span-11">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+      {/* Product Information */}
+      <div>
+        <h4 class="text-lg font-semibold text-gray-800">
+          {product.product.title}
+        </h4>
+        <p class="text-main text-sm mt-1">
+          Price: {product.price} EGP
+        </p>
+        <RemoveFromCartForm productId={product.product._id} />
+      </div>
+
+      {/* Quantity Controls */}
+      <CartQuantityControls productId={product.product._id} count={product.count} />
+    </div>
+  </div>
+</div>

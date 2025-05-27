@@ -1,0 +1,48 @@
+---
+import { addProductToCart } from "../../../Services/cart.Service";
+
+/**
+ * Form handler for adding a product to the cart
+ */
+
+const request = Astro.request;
+const cookies = Astro.cookies;
+
+if (request.method === "POST") {
+  const formData = await request.formData();
+  const productId = formData.get("productId")?.toString() ?? "";
+  const returnUrl = formData.get("returnUrl")?.toString() ?? "/";
+  const token = cookies.get("token")?.value;
+
+  if (!token) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+
+  if (!productId) {
+    return new Response("Bad Request: Missing productId", { status: 400 });
+  }
+
+  try {
+    await addProductToCart(productId, token);
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: `${returnUrl}${returnUrl.includes('?') ? '&' : '?'}added=1`,
+      },
+    });
+  } catch (err: any) {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: `${returnUrl}${returnUrl.includes('?') ? '&' : '?'}error=${encodeURIComponent(err.message)}`,
+      },
+    });
+  }
+}
+
+// Handle non-POST requests
+return new Response("Method Not Allowed", {
+  status: 405,
+  headers: { "Allow": "POST" },
+});
+---

@@ -1,0 +1,14 @@
+---
+import AllProducts from "../components/Features/Products/allProducts.astro";
+import Layout from "../layouts/Layout.astro";
+import { getAllProducts } from "../Services/productService";
+
+// Get the page from URL parameters or default to 1
+const page = parseInt(Astro.url.searchParams.get('page') || '1');
+
+// Fetch products for the current page
+const products = await getAllProducts(page);
+---
+<Layout>
+  <AllProducts products={products} />
+</Layout>
