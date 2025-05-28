@@ -1,13 +1,11 @@
 ---
 import Navbar from "../components/layout/navbar.astro"
 import ToastManager from "../components/ui/ToastManager"
-import { getLangFromUrl } from "../i18n/utils";
 
-const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
