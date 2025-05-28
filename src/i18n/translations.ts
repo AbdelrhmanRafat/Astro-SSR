@@ -10,6 +10,14 @@ export const translations = {
       loading: 'Loading...',
       error: 'An error occurred',
       success: 'Success'
+    },
+    auth: {
+      welcomeBack: 'Welcome Back',
+      noAccount: "Don't have an account?",
+      signUp: 'Sign Up',
+      signIn: 'Sign In',
+      email: 'Email',
+      password: 'Password'
     }
   },
   ar: {
@@ -23,6 +31,14 @@ export const translations = {
       loading: 'جاري التحميل...',
       error: 'حدث خطأ',
       success: 'تم بنجاح'
+    },
+    auth: {
+      welcomeBack: 'مرحباً بعودتك',
+      noAccount: 'ليس لديك حساب؟',
+      signUp: 'إنشاء حساب',
+      signIn: 'تسجيل الدخول',
+      email: 'البريد الإلكتروني',
+      password: 'كلمة المرور'
     }
   }
 } as const;

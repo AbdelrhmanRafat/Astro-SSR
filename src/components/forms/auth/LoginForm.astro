@@ -1,8 +1,15 @@
 ---
+import { getTranslation } from "../../../i18n/translations";
+
+// Default to English for server-side rendering
+const lang = "en";
 ---
+
 <form method="POST" action="server/auth/login">
   <div class="mb-5">
-    <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email address</label>
+    <label class="block text-sm font-medium text-gray-700 mb-1" for="email" data-translate="auth.email">
+      {getTranslation('auth.email', lang)}
+    </label>
     <input
       type="email"
       name="email"
@@ -13,7 +20,9 @@
     />
   </div>
   <div class="mb-6">
-    <label class="block text-sm font-medium text-gray-700 mb-1" for="password">Password</label>
+    <label class="block text-sm font-medium text-gray-700 mb-1" for="password" data-translate="auth.password">
+      {getTranslation('auth.password', lang)}
+    </label>
     <input
       type="password"
       name="password"
@@ -26,7 +35,8 @@
   <button
     type="submit"
     class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 rounded-lg transition-all duration-200"
+    data-translate="auth.signIn"
   >
-    Sign In
+    {getTranslation('auth.signIn', lang)}
   </button>
 </form>
