@@ -17,8 +17,11 @@ export const translations = {
       signUp: 'Sign Up',
       signIn: 'Sign In',
       email: 'Email',
-      password: 'Password'
-    }
+      password: 'Password',
+      fullName: 'Full Name',
+      confirmPassword: 'Confirm Password',
+      register: 'Register'
+    }    
   },
   ar: {
     nav: {
@@ -38,8 +41,11 @@ export const translations = {
       signUp: 'إنشاء حساب',
       signIn: 'تسجيل الدخول',
       email: 'البريد الإلكتروني',
-      password: 'كلمة المرور'
-    }
+      password: 'كلمة المرور',
+      fullName: 'الاسم الكامل',
+      confirmPassword: 'تأكيد كلمة المرور',
+      register: 'تسجيل'
+    }    
   }
 } as const;
 
