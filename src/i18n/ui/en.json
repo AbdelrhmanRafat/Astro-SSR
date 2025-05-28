@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "home": "Home",
+    "cart": "Cart",
+    "signin": "Sign In",
+    "logout": "Logout",
+    "language": "العربية"
+  }
+}

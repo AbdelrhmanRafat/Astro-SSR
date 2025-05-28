@@ -1,10 +1,15 @@
 ---
 import "../../styles/global.css";
 import { getCookie } from "../../lib/cookies";
+import { getTranslation } from "../../i18n/translations";
+import LanguageSwitcher from "../ui/LanguageSwitcher.astro";
 
 // Get token from cookies
 const cookies = Astro.request.headers.get("cookie") || "";
 const token = getCookie(cookies, "token");
+
+// Default to English for server-side rendering
+const lang = "en";
 ---
 
 <nav class="bg-white shadow-md">
@@ -17,13 +22,13 @@ const token = getCookie(cookies, "token");
   
         <!-- Desktop Nav Links -->
         <div class="hidden md:flex items-center space-x-6">
-          <a href="/" class="text-gray-600 hover:text-gray-900">Home</a>
-          <a href="/cart" class="text-gray-600 hover:text-gray-900">Cart</a>
-          <a href="#" class="text-gray-600 hover:text-gray-900">Services</a>
+          <a href="/" class="text-gray-600 hover:text-gray-900" data-translate="nav.home">{getTranslation('nav.home', lang)}</a>
+          <a href="/cart" class="text-gray-600 hover:text-gray-900" data-translate="nav.cart">{getTranslation('nav.cart', lang)}</a>
+          <LanguageSwitcher />
           {token ? (
-            <button id="logout-desktop" class="cursor-pointer text-gray-600 hover:text-gray-900 focus:outline-none">Logout</button>
+            <button id="logout-desktop" class="cursor-pointer text-gray-600 hover:text-gray-900 focus:outline-none" data-translate="nav.logout">{getTranslation('nav.logout', lang)}</button>
           ) : (
-            <a href="/signin" class="text-gray-600 hover:text-gray-900">Sign In</a>
+            <a href="/signin" class="text-gray-600 hover:text-gray-900" data-translate="nav.signIn">{getTranslation('nav.signIn', lang)}</a>
           )}
         </div>
   
@@ -42,18 +47,22 @@ const token = getCookie(cookies, "token");
   
     <!-- Mobile Nav Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pt-2 pb-4 space-y-1 bg-white">
-      <a href="#" class="block text-gray-700 hover:text-gray-900">Home</a>
-      <a href="/cart" class="block text-gray-700 hover:text-gray-900">Cart</a>
-      <a href="#" class="block text-gray-700 hover:text-gray-900">Services</a>
+      <a href="#" class="block text-gray-700 hover:text-gray-900" data-translate="nav.home">{getTranslation('nav.home', lang)}</a>
+      <a href="/cart" class="block text-gray-700 hover:text-gray-900" data-translate="nav.cart">{getTranslation('nav.cart', lang)}</a>
+      <div class="py-2">
+        <LanguageSwitcher />
+      </div>
       {token ? (
-        <button id="logout-mobile" class="block text-gray-700 hover:text-gray-900 w-full text-left focus:outline-none">Logout</button>
+        <button id="logout-mobile" class="block text-gray-700 hover:text-gray-900 w-full text-left focus:outline-none" data-translate="nav.logout">{getTranslation('nav.logout', lang)}</button>
       ) : (
-        <a href="/signin" class="block text-gray-700 hover:text-gray-900">Sign In</a>
+        <a href="/signin" class="block text-gray-700 hover:text-gray-900" data-translate="nav.signIn">{getTranslation('nav.signIn', lang)}</a>
       )}
     </div>
   </nav>
 
 <script>
+  import { initTranslations } from '../../i18n/client';
+
   // Handle mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -72,5 +81,8 @@ const token = getCookie(cookies, "token");
 
   logoutDesktop?.addEventListener('click', handleLogout);
   logoutMobile?.addEventListener('click', handleLogout);
+
+  // Initialize translations
+  initTranslations();
 </script>
   

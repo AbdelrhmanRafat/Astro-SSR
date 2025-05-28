@@ -1,0 +1,41 @@
+---
+import { getTranslation } from "../../i18n/translations";
+
+// Default to English for server-side rendering
+const lang = "en";
+---
+
+<div class="relative inline-block text-left">
+  <select
+    id="language-select"
+    class="block w-full px-3 py-1.5 text-sm text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+  >
+    <option value="en">English</option>
+    <option value="ar">العربية</option>
+  </select>
+</div>
+
+<script>
+  import { initTranslations } from '../../i18n/client';
+
+  // Handle language switching
+  const languageSelect = document.getElementById('language-select') as HTMLSelectElement;
+  
+  // Set initial language from localStorage or default to English
+  const savedLang = localStorage.getItem('lang') || 'en';
+  languageSelect.value = savedLang;
+  
+  languageSelect?.addEventListener('change', (e) => {
+    const target = e.target as HTMLSelectElement;
+    const newLang = target.value;
+    
+    // Save language to localStorage
+    localStorage.setItem('lang', newLang);
+    
+    // Reload page to apply changes
+    window.location.reload();
+  });
+
+  // Initialize translations
+  initTranslations();
+</script> 
