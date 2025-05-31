@@ -47,9 +47,7 @@ const CartPanel: React.FC<CartPanelProps> = ({ open, onClose }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [open, onClose]);
-
   if (!shouldRender) return null;
-
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
       <div
