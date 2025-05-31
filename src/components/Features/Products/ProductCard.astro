@@ -1,7 +1,7 @@
 ---
 import { getCookie } from "../../../lib/cookies";
 import type { Product } from "../../../Models/Products";
-import AddToCartButton from "../../forms/Cart/AddToCartButton.astro";
+import AddToCartButton from "../../forms/Cart/AddToCart";
 
 interface Props {
   product: Product;
@@ -54,11 +54,13 @@ const token = getCookie(cookies, "token");
     </div>
 
     <!-- Add to Cart Button -->
-    <AddToCartButton 
-      productId={product._id} 
-      isLoggedIn={!!token} 
-      returnUrl={Astro.url.pathname + Astro.url.search} 
-    />
+    <AddToCartButton
+  productId={product._id}
+  productTitle={product.title}
+  productImage={product.imageCover}
+  productPrice={product.price}
+  client:load
+/>
   </div>
 </div>
 
