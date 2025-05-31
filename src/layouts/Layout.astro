@@ -1,6 +1,6 @@
 ---
 import Navbar from "../components/layout/navbar.astro"
-import ToastManager from "../components/ui/ToastManager"
+import SlidingToastPanel from "../components/ui/SlidingManager"
 
 ---
 
@@ -15,7 +15,7 @@ import ToastManager from "../components/ui/ToastManager"
 	<body>
        <Navbar />
 		<slot />
-		<ToastManager client:load />
+		<SlidingToastPanel client:load />
 	</body>
 </html>
 
