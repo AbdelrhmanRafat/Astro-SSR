@@ -1,0 +1,20 @@
+---
+import type { Category } from "../../../Models/Products";
+
+const AllCategories : Category[] = Astro.props.categories;
+console.log(AllCategories);
+---
+
+<div class="w-11/12 py-12 mx-auto">
+    <div class="text-left">
+        <h1 class="text-2xl font-bold mb-4">Categories</h1>
+    </div>
+    <div class="grid grid-cols-1 gap-6 overflow-auto">
+        {AllCategories.map((category) => (
+            <div class="bg-white border-2 border-gray-200 text-center w-[200px]  shadow-md rounded-lg p-4">
+                <img src={category.image} alt={category.name} class="w-full object-cover rounded-lg" />
+                <h2 class="text-lg font-bold">{category.name}</h2>
+            </div>
+        ))}
+    </div>
+</div>
