@@ -2,30 +2,10 @@ import React from 'react';
 
 const ShimmerLoader = () => {
   // Shimmer skeleton components
-  const ProductItemSkeleton = () => (
-    <div className="d-flex align-items-center gap-3 p-3 bg-light rounded placeholder-glow">
-      <div className="placeholder rounded" style={{width: '64px', height: '64px'}}></div>
-      <div className="flex-grow-1">
-        <div className="placeholder rounded mb-2" style={{height: '16px', width: '75%'}}></div>
-        <div className="placeholder rounded" style={{height: '12px', width: '50%'}}></div>
-      </div>
-      <div className="text-end">
-        <div className="placeholder rounded mb-1" style={{height: '20px', width: '80px'}}></div>
-        <div className="placeholder rounded" style={{height: '12px', width: '64px'}}></div>
-      </div>
-    </div>
-  );
-
-  const FormFieldSkeleton = () => (
-    <div className="placeholder-glow">
-      <div className="placeholder rounded mb-2" style={{height: '16px', width: '33%'}}></div>
-      <div className="placeholder rounded" style={{height: '40px', width: '100%'}}></div>
-    </div>
-  );
 
   return (
     <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center align-items-md-start">
-      
+
 {/* Right Sidebar Skeleton - Combined Form */}
       <div className="w-100">
         
@@ -112,8 +92,7 @@ const ShimmerLoader = () => {
           </div>
         </div>
       </div>
-
-    {/* Left Side Skeleton - Cart Items */}
+          {/* Left Side Skeleton - Cart Items */}
       <div className="w-100 sticky-md-top align-self-md-start">
         
         {/* Products List Skeleton */}
@@ -176,6 +155,7 @@ const ShimmerLoader = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

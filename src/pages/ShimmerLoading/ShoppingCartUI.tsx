@@ -16,8 +16,8 @@ const ShoppingCartUI = () => {
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
-        
-        const fetchedProducts = await getAllProducts(1);        
+
+        const fetchedProducts = await getAllProducts(1);
         setProductData(fetchedProducts);
         setError(null);
       } catch (err) {
@@ -31,17 +31,17 @@ const ShoppingCartUI = () => {
     fetchProducts();
   }, []);
 
-  
+
   // Error state
   if (error && !isLoading) {
     return (
-      <div className="min-vh-100 bg-light p-3" dir="rtl">
+      <div className="min-vh-100 bg-light p-3">
         <div className="container-xxl">
           <div className="text-center py-5">
             <div className="bg-danger bg-opacity-10 border border-danger border-opacity-25 rounded p-4">
               <h2 className="fs-4 fw-semibold text-danger mb-2">خطأ في تحميل المنتجات</h2>
               <p className="text-danger mb-3">{error}</p>
-              <button 
+              <button
                 onClick={() => window.location.reload()}
                 className="btn btn-danger"
               >
@@ -55,23 +55,23 @@ const ShoppingCartUI = () => {
   }
 
   return (
-    <div className="bg-light p-3">
-      <div className="container">
+    <div dir="rtl">
+      <div className="w-100">
         {/* Main Content */}
         {isLoading ? (
           <ShimmerLoader />
         ) : (
-          <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center align-items-md-start">
-            
-            {/* Right Sidebar - Forms and Order Summary */}
-            <div className="w-100 md:w-50">
+          <div className="row g-3 justify-content-center align-items-start">
+            {/* Shipping Form */}
+            <div className="col-12 col-md-6 m-0 bg-white h-full">
               <ShippingForm />
             </div>
 
-            {/* Left Side - Cart Items */}
-            <div className="w-100 sticky-md-top align-self-md-start md:w-50">
+            {/* Cart Items */}
+            <div className="col-12 col-md-6 m-0 sticky-md-top align-self-md-start h-full">
               <CartItems />
             </div>
+
 
           </div>
         )}

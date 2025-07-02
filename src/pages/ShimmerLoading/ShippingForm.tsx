@@ -4,7 +4,7 @@ const ShippingForm: React.FC = () => {
   return (
     <>
       {/* Contact Info Card */}
-      <section id="Personal-info-Form" className="bg-white rounded shadow-sm p-4 mb-4 d-flex flex-column justify-content-start align-items-start gap-3">
+      <section id="Personal-info-Form" className="p-4 mb-4 d-flex flex-column justify-content-start align-items-start gap-3">
         <h3 className="fw-bold fs-5">معلومات التواصل</h3>
         <div className="d-flex flex-column gap-3 w-100">
           <div>

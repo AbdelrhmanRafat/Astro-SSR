@@ -6,7 +6,7 @@ const CartItems: React.FC = () => {
     return (
         <>
             {/* Products List */}
-            <div className="bg-white rounded shadow-sm p-4">
+            <div className="p-4">
                 <div className="d-flex flex-column gap-3">
 
                     {/* Dynamic Products */}
