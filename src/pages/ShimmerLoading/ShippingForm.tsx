@@ -4,112 +4,106 @@ const ShippingForm: React.FC = () => {
   return (
     <>
       {/* Contact Info Card */}
-      <section id="Personal-info-Form" className="bg-white rounded-lg shadow-sm p-6 mb-6 flex flex-col justify-start items-start gap-3">
-        <h3 className="font-bold text-lg">معلومات التواصل</h3>
-        <div className="space-y-4 w-full">
+      <section id="Personal-info-Form" className="bg-white rounded shadow-sm p-4 mb-4 d-flex flex-column justify-content-start align-items-start gap-3">
+        <h3 className="fw-bold fs-5">معلومات التواصل</h3>
+        <div className="d-flex flex-column gap-3 w-100">
           <div>
             <input 
               type="text" 
               placeholder="الايميل او رقم التليفون"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2"
+              className="form-control"
             />
           </div>
-          <div className="flex items-center gap-2">
-            <input type="checkbox" id="newsletter" className="rounded" />
-            <label htmlFor="newsletter" className="text-sm text-gray-600">
+          <div className="d-flex align-items-center gap-2">
+            <input type="checkbox" id="newsletter" className="form-check-input" />
+            <label htmlFor="newsletter" className="form-check-label small text-muted">
               أرسل لي الأخبار والعروض
             </label>
           </div>
         </div>
-        <h3 className="font-bold text-lg">عنوان الشحن</h3>
-        <div className="space-y-4 w-full">
-          
+        <h3 className="fw-bold fs-5">عنوان الشحن</h3>
+        <div className="d-flex flex-column gap-3 w-100">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="form-label small fw-medium text-dark mb-2">
               بلد
             </label>
-            <select className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white">
+            <select className="form-select">
               <option>مصر</option>
             </select>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="row g-3">
+            <div className="col-6">
+              <label className="form-label small fw-medium text-dark mb-2">
                 الاسم الأول
               </label>
               <input 
                 type="text" 
-                className="w-full border border-gray-300 rounded-lg px-3 py-2" 
+                className="form-control" 
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+            <div className="col-6">
+              <label className="form-label small fw-medium text-dark mb-2">
                 الاسم الثاني
               </label>
               <input 
                 type="text" 
-                className="w-full border border-gray-300 rounded-lg px-3 py-2" 
+                className="form-control" 
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="form-label small fw-medium text-dark mb-2">
               العنوان
             </label>
             <input 
               type="text" 
-              className="w-full border border-gray-300 rounded-lg px-3 py-2" 
+              className="form-control" 
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="d-flex flex-md-row flex-column justify-content-center w-full items-center gap-3">
+            <div className="w-100 md:w-50">
+              <label className="form-label small fw-medium text-dark mb-2">
                 مدينة
               </label>
-              <select className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white">
-                <option>الرمز البريدي (اختياري)</option>
-              </select>
+              <input
+                type="text"
+                className="form-control"
+              />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+            <div className="w-100 md:w-50">
+              <label className="form-label small fw-medium text-dark mb-2">
                 محافظة
               </label>
-              <select className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white">
+              <select className="form-select">
                 <option>محافظة الجيزة</option>
               </select>
             </div>
           </div>
 
-          <div className="relative">
+          <div className="position-relative">
             <input 
               type="text" 
               placeholder="رقم الموبايل للتواصل بخصوص الطلب"
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 pl-10"
+              className="form-control"
+              style={{paddingLeft: '2.5rem'}}
             />
-            <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
-              <svg className="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <div className="position-absolute start-0 top-50 translate-middle-y ms-3">
+              <svg className="text-muted" width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
             </div>
           </div>
-
-          <div className="flex items-center gap-2">
-            <input type="checkbox" id="save-info" className="rounded" />
-            <label htmlFor="save-info" className="text-xs text-gray-500">
-              احفظ هذه المعلومات للمرة القادمة
-            </label>
-          </div>
         </div>
       </section>
       {/* Footer Links */}
-      <div className="text-center space-y-2 text-sm text-gray-500">
-        <div className="flex justify-center gap-4">
-          <a href="#" className="hover:text-gray-700">شروط الخدمة</a>
-          <a href="#" className="hover:text-gray-700">سياسة الخصوصية</a>
-          <a href="#" className="hover:text-gray-700">سياسة الاسترداد</a>
+      <div className="text-center d-flex flex-column gap-2 small text-muted">
+        <div className="d-flex justify-content-center gap-3">
+          <a href="#" className="text-decoration-none text-muted">شروط الخدمة</a>
+          <a href="#" className="text-decoration-none text-muted">سياسة الخصوصية</a>
+          <a href="#" className="text-decoration-none text-muted">سياسة الاسترداد</a>
         </div>
       </div>
     </>
