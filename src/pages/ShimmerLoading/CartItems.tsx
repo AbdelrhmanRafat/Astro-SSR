@@ -18,17 +18,17 @@ const CartItems: React.FC = () => {
   return (
     <div className="container-fluid bg-secondary-subtle min-vh-md-100">
       <div className="row">
-        <div className="col-12 col-md-8 d-flex flex-column justify-content-start align-items-start gap-3 p-3 p-md-4 py-md-5">
+        <div className="col-12 col-md-8 d-flex flex-column justify-content-start align-items-start gap-3 p-1 p-md-4 py-md-5">
 
           {/* ✅ Mobile Header Toggle */}
           <div
-            className="d-md-none w-100 d-flex justify-content-between align-items-center fw-semibold"
+            className="d-md-none w-100 d-flex justify-content-between align-items-center fw-medium"
             onClick={() => setShowMobileSummary(prev => !prev)}
             style={{ cursor: "pointer" }}
           >
-            <div className="d-flex align-items-center gap-2">
+            <div className="d-flex align-items-center gap-1 text-primary">
               <span>ملخص الطلب</span>
-              <span>{showMobileSummary ? "⬆️" : "⬇️"}</span>
+              <span>{showMobileSummary ? "⬆" : "⬇"}</span>
             </div>
             <span className="text-nowrap">ج.م ٩٦٥٨١٠٫٠٠</span>
           </div>
