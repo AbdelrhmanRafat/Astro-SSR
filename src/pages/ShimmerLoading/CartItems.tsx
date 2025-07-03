@@ -34,7 +34,7 @@ const CartItems: React.FC = () => {
           </div>
 
           {/* ✅ Order Summary Content */}
-          <div className="w-100 d-md-flex flex-column gap-3">
+          <div className="container d-md-flex flex-column gap-3">
             {/* Mobile content */}
             <div
               className="d-md-none overflow-hidden transition-all"
