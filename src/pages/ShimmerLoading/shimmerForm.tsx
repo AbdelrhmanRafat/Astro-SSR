@@ -3,85 +3,84 @@ import React from 'react';
 
 const ShimmerForm = () => {
   return (
-    <div className="w-100 d-flex flex-column justify-content-start align-items-center gap-3">
-      {/* Note Box */}
-      <div className="w-100 border rounded p-3 d-flex justify-content-start align-items-center gap-2 placeholder-glow">
-        <div className="placeholder rounded-circle placeholder-sm"></div>
-        <div className="flex-grow-1">
-          <div className="placeholder rounded placeholder-label w-85"></div>
-        </div>
-      </div>
+    <form className="container-fluid min-vh-md-100">
+      <div className="row">
+        {/* Sidebar - hidden on small screens */}
+        <div className="d-none d-md-flex col-md-2 flex-column justify-content-center align-items-center p-3 p-md-5" />
 
-      {/* Contact Info */}
-      <div className="w-100 d-flex flex-column align-items-start gap-2">
-        <div className="placeholder rounded placeholder-label w-150"></div>
-        <div className="w-100 placeholder-glow">
-          <div className="placeholder rounded placeholder-label w-140 mb-1"></div>
-          <div className="placeholder rounded placeholder-md w-100"></div>
-        </div>
-        <div className="d-flex align-items-center gap-2 placeholder-glow">
-          <div className="placeholder rounded-circle placeholder-sm"></div>
-          <div className="placeholder rounded placeholder-label w-150"></div>
-        </div>
-      </div>
+        {/* Main Form Content Skeleton */}
+        <div className="col-12 col-md-10 d-flex flex-column justify-content-start align-items-start gap-2 gap-md-3 p-3 p-md-5">
 
-      {/* Shipping Address */}
-      <div className="w-100 d-flex flex-column align-items-start gap-2">
-        <div className="placeholder rounded placeholder-label w-120"></div>
-        <div className="w-100 placeholder-glow">
-          <div className="placeholder rounded placeholder-label w-40 mb-1"></div>
-          <div className="placeholder rounded placeholder-md w-100"></div>
-        </div>
+          {/* Contact Info Skeleton */}
+          <div className="w-100 d-flex flex-column align-items-start gap-2">
+            <div className="placeholder rounded placeholder-glow" style={{height: '24px', width: '150px'}}></div>
+            <div className="w-100 placeholder-glow">
+              <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
+            </div>
+          </div>
 
-        <div className="row w-100 g-3">
-          {[1, 2].map((_, i) => (
-            <div className="col-12 col-md-6" key={i}>
-              <div className="placeholder-glow">
-                <div className="placeholder rounded placeholder-label w-80 mb-1"></div>
-                <div className="placeholder rounded placeholder-md w-100"></div>
+          {/* Shipping Address Skeleton */}
+          <div className="w-100 d-flex flex-column align-items-start gap-2">
+            <div className="placeholder rounded placeholder-glow" style={{height: '24px', width: '120px'}}></div>
+
+            {/* Country Select Skeleton */}
+            <div className="w-100 w-md-50 placeholder-glow">
+              <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
+            </div>
+
+            {/* First/Last Name Skeleton */}
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-2 w-100">
+              <div className="w-100 w-md-50 placeholder-glow">
+                <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
+              </div>
+              <div className="w-100 w-md-50 placeholder-glow">
+                <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
               </div>
             </div>
-          ))}
-        </div>
 
-        <div className="w-100 placeholder-glow">
-          <div className="placeholder rounded placeholder-label w-60 mb-1"></div>
-          <div className="placeholder rounded placeholder-md w-100"></div>
-        </div>
+            {/* Address Skeleton */}
+            <div className="w-100 placeholder-glow">
+              <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
+            </div>
 
-        <div className="row w-100 g-3">
-          {["50", "60"].map((width, i) => (
-            <div className="col-12 col-md-6" key={i}>
-              <div className="placeholder-glow">
-                <div className={`placeholder rounded placeholder-label w-${width} mb-1`}></div>
-                <div className="placeholder rounded placeholder-md w-100"></div>
+            {/* City/Governorate Skeleton */}
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-2 w-100">
+              <div className="w-100 w-md-50 placeholder-glow">
+                <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
+              </div>
+              <div className="w-100 w-md-50 placeholder-glow">
+                <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
               </div>
             </div>
-          ))}
-        </div>
 
-        <div className="w-100 placeholder-glow">
-          <div className="placeholder rounded placeholder-label w-140 mb-1"></div>
-          <div className="placeholder rounded placeholder-md w-100"></div>
-        </div>
+     
 
-        <div className="w-100 position-relative placeholder-glow">
-          <div className="placeholder rounded placeholder-label w-220 mb-1"></div>
-          <div className="placeholder rounded placeholder-md w-100"></div>
-          <div className="position-absolute start-0 top-50 translate-middle-y ps-3 placeholder rounded placeholder-sm mt-1"></div>
-        </div>
+            {/* Mobile Number Skeleton */}
+            <div className="w-100 placeholder-glow">
+              <div className="d-flex align-items-center justify-content-between border rounded-3 px-3 py-2" style={{height: '58px'}}>
+                <div className="placeholder rounded flex-grow-1" style={{height: '40px'}}></div>
+                <div className="ms-3 flex-shrink-0">
+                  <div className="placeholder rounded" style={{width: '20px', height: '20px'}}></div>
+                </div>
+              </div>
+            </div>
 
-        <div className="d-flex align-items-center gap-2 placeholder-glow">
-          <div className="placeholder rounded-circle placeholder-sm"></div>
-          <div className="placeholder rounded placeholder-label w-180"></div>
-        </div>
+            {/* Save Info Checkbox Skeleton */}
+            <div className="d-flex align-items-center gap-2 placeholder-glow">
+              <div className="placeholder rounded" style={{width: '16px', height: '16px'}}></div>
+              <div className="placeholder rounded" style={{height: '14px', width: '180px'}}></div>
+            </div>
 
-        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-100 gap-3 pt-2">
-          <div className="placeholder rounded placeholder-label w-120"></div>
-          <div className="placeholder rounded placeholder-md w-160"></div>
+            {/* Actions Skeleton */}
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center w-100 gap-2 pt-3">
+              <div className="placeholder rounded placeholder-glow" style={{height: '20px', width: '120px'}}></div>
+              <div className="placeholder rounded placeholder-glow" style={{height: '42px', width: '160px'}}></div>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
