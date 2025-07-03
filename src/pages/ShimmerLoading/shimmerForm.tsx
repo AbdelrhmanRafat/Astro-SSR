@@ -28,12 +28,12 @@ const ShimmerForm = () => {
               <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
             </div>
 
-            {/* First/Last Name Skeleton */}
-            <div className="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-2 w-100">
-              <div className="w-100 w-md-50 placeholder-glow">
+            {/* First/Last Name Skeleton - Always Row Layout */}
+            <div className="d-flex flex-row justify-content-between align-items-stretch gap-2 w-100">
+              <div className="w-50 placeholder-glow">
                 <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
               </div>
-              <div className="w-100 w-md-50 placeholder-glow">
+              <div className="w-50 placeholder-glow">
                 <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
               </div>
             </div>
@@ -43,17 +43,15 @@ const ShimmerForm = () => {
               <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
             </div>
 
-            {/* City/Governorate Skeleton */}
-            <div className="d-flex flex-column flex-md-row justify-content-between align-items-stretch gap-2 w-100">
-              <div className="w-100 w-md-50 placeholder-glow">
+            {/* City/Governorate Skeleton - Always Row Layout */}
+            <div className="d-flex flex-row justify-content-between align-items-stretch gap-2 w-100">
+              <div className="w-50 placeholder-glow">
                 <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
               </div>
-              <div className="w-100 w-md-50 placeholder-glow">
+              <div className="w-50 placeholder-glow">
                 <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
               </div>
             </div>
-
-     
 
             {/* Mobile Number Skeleton */}
             <div className="w-100 placeholder-glow">
@@ -63,12 +61,6 @@ const ShimmerForm = () => {
                   <div className="placeholder rounded" style={{width: '20px', height: '20px'}}></div>
                 </div>
               </div>
-            </div>
-
-            {/* Save Info Checkbox Skeleton */}
-            <div className="d-flex align-items-center gap-2 placeholder-glow">
-              <div className="placeholder rounded" style={{width: '16px', height: '16px'}}></div>
-              <div className="placeholder rounded" style={{height: '14px', width: '180px'}}></div>
             </div>
 
             {/* Actions Skeleton */}

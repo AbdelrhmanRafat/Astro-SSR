@@ -66,20 +66,21 @@ const ShoppingCartUI = () => {
       <ShimmerLoader />
     ) : (
       <div className="w-100">
-        <div className="row justify-content-center align-items-start m-0 w-100">
-          
-          {/* Shipping Form */}
-          <div className="col-12 col-md-6 px-0">
-            <ShippingForm />
-          </div>
+  <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-start w-100">
+    
+    {/* Shipping Form */}
+    <div className="w-100 w-md-50 px-0">
+      <ShippingForm />
+    </div>
 
-          {/* Cart Items */}
-          <div className="col-12 col-md-6 px-0">
-            <CartItems />
-          </div>
+    {/* Cart Items */}
+    <div className="w-100 w-md-50 px-0">
+      <CartItems />
+    </div>
 
-        </div>
-      </div>
+  </div>
+</div>
+
     )}
   </div>
 </div>

@@ -5,14 +5,21 @@ import ShimmerCart from './ShimmerCart';
 
 const ShimmerLoader = () => {
   return (
-    <div className="d-flex flex-column flex-md-row gap-3 justify-content-center align-items-center align-items-md-start">
-      <div className="w-100">
-        <ShimmerForm />
-      </div>
-      <div className="w-100 sticky-md-top align-self-md-start">
-        <ShimmerCart />
-      </div>
+    <div className="w-100">
+  <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-start w-100">
+
+    {/* ✅ Shimmer Form Placeholder */}
+    <div className="w-100 w-md-50 px-0">
+      <ShimmerForm />
     </div>
+
+    {/* ✅ Shimmer Cart Placeholder - Hidden on Mobile */}
+    <div className="w-100 w-md-50 px-0 sticky-md-top align-self-md-start d-none d-md-block">
+      <ShimmerCart />
+    </div>
+
+  </div>
+</div>
   );
 }
 
