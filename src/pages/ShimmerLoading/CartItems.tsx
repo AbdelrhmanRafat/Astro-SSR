@@ -18,7 +18,7 @@ const CartItems: React.FC = () => {
   return (
     <div className="container-fluid bg-secondary-subtle min-vh-md-100">
       <div className="row">
-        <div className="col-12 col-md-8 d-flex flex-column justify-content-start align-items-start gap-3 p-1 p-md-4 py-md-5">
+        <div className="col-12 container-fluid col-md-8 d-flex flex-column justify-content-start align-items-start gap-3 p-1 p-md-4 py-md-5">
 
           {/* ✅ Mobile Header Toggle */}
           <div
@@ -26,7 +26,7 @@ const CartItems: React.FC = () => {
             onClick={() => setShowMobileSummary(prev => !prev)}
             style={{ cursor: "pointer" }}
           >
-            <div className="d-flex align-items-center gap-1 text-primary">
+            <div className="d-flex align-items-center gap-2 text-primary">
               <span>ملخص الطلب</span>
               <span>{showMobileSummary ? "⬆" : "⬇"}</span>
             </div>
