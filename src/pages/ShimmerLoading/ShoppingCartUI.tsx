@@ -55,39 +55,35 @@ const ShoppingCartUI = () => {
   }
 
   return (
-    <div dir="rtl">
-      <div className="position-relative w-100">
-        {/* Half BG - Left (white) */}
-        <div className="d-none d-md-block position-absolute top-0 start-0 w-50 h-100 bg-secondary-subtle"></div>
-
-        {/* Half BG - Right (primary) */}
-        <div className="d-none d-md-block position-absolute top-0 end-0 w-50 h-100 bg-white"></div>
-
-        {/* Main Content Inside Container */}
-        <div className="position-relative">
-          <div className="container py-4">
-            {isLoading ? (
-              <ShimmerLoader />
-            ) : (
-              <div className="row g-3 justify-content-center align-items-start">
-                {/* Shipping Form */}
-                <div className="col-12 col-md-6">
-                  <ShippingForm />
-                </div>
-
-                {/* Cart Items */}
-                {/* Cart Items */}
-                <div className="col-12 col-md-6 d-flex justify-content-center">
-                  <div
-                    className="position-sticky top-0 align-self-start p-3 w-100"
-                  >
-                    <CartItems />
-                  </div>
-                </div>
-              </div>
-            )}
+    <div dir="rtl" className="w-100">
+      <div>
+        {isLoading ? (
+          <ShimmerLoader />
+        ) : (
+          <div dir="rtl" className="w-100">
+  <div>
+    {isLoading ? (
+      <ShimmerLoader />
+    ) : (
+      <div className="w-100">
+        <div className="row justify-content-center align-items-start m-0 w-100">
+          
+          {/* Shipping Form */}
+          <div className="col-12 col-md-6 px-0">
+            <ShippingForm />
           </div>
+
+          {/* Cart Items */}
+          <div className="col-12 col-md-6 px-0">
+            <CartItems />
+          </div>
+
         </div>
+      </div>
+    )}
+  </div>
+</div>
+        )}
       </div>
     </div>
   );
