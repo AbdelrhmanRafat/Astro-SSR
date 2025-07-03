@@ -100,9 +100,9 @@ const ShippingForm: React.FC = () => {
                   }}
                 >
                   <option value="">اختر المحافظة</option>
-                  <option>محافظة القاهرة</option>
-                  <option>محافظة الجيزة</option>
-                  <option>محافظة الإسكندرية</option>
+                  <option>القاهرة</option>
+                  <option>الجيزة</option>
+                  <option>الإسكندرية</option>
                 </select>
                 <label htmlFor="governorate">محافظة</label>
               </div>
