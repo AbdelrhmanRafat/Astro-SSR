@@ -3,11 +3,14 @@ import type { Product } from "../../Models/Products";
 import CouponInput from './CuponState';
 
 
+
+
 const CartItems: React.FC = () => {
     return (
         <>
-            <div className="w-100 bg-secondary-subtle vh-100 d-flex flex-column flex-md-row">
-                <div className="w-100 w-md-50 d-flex flex-column justify-content-start align-items-start gap-3 p-4 py-5">
+<div className="container-fluid bg-secondary-subtle min-vh-md-100">
+      <div className="row">
+        <div className="col-12 col-md-8 d-flex flex-column justify-content-start align-items-start gap-3 p-4 py-5">
 
                     {/* Static Products */}
                     <div className="d-flex flex-column gap-3 w-100">
@@ -92,6 +95,7 @@ const CartItems: React.FC = () => {
                         </div>
                     </div>
 
+                </div>
                 </div>
             </div>
         </>
