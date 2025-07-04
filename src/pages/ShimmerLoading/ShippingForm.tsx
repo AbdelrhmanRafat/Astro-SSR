@@ -124,24 +124,36 @@ const ShippingForm: React.FC = () => {
                   </div>
 
                   {/* رقم الموبايل */}
-                  <div className="card border-2 shadow-sm">
-                    <div className="card-body p-3">
-                      <div className="d-flex align-items-center">
-                        <div className="form-floating flex-grow-1">
-                          <input
-                            type="text"
-                            id="mobile"
-                            className="form-control border-0 shadow-none bg-transparent text-end"
-                            placeholder="رقم الموبايل"
+                  {/* Mobile Number */}
+                  <div className="w-100">
+                    <div
+                      className="d-flex align-items-center justify-content-between border rounded-3 shadow-sm px-3 py-2 bg-white"
+                    >
+                      {/* Floating Label Input */}
+                      <div className="form-floating flex-grow-1">
+                        <input
+                          type="text"
+                          id="mobile"
+                          className="form-control border-0 shadow-none bg-transparent text-end"
+                          placeholder="رقم الموبايل"
+                          style={{ paddingRight: '0.75rem' }}
+                        />
+                        <label htmlFor="mobile">رقم الموبايل للتواصل بخصوص الطلب</label>
+                      </div>
+
+                      {/* Static Icon */}
+                      <div className="ms-3 flex-shrink-0">
+                        <svg className="text-muted" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                          <path
+                            fillRule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clipRule="evenodd"
                           />
-                          <label htmlFor="mobile" className="text-muted">رقم الموبايل للتواصل بخصوص الطلب</label>
-                        </div>
-                        <div className="ms-3">
-                          <i className="bi bi-info-circle text-primary" style={{ fontSize: '1.25rem' }}></i>
-                        </div>
+                        </svg>
                       </div>
                     </div>
                   </div>
+
 
                   {/* الأزرار */}
                   <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-4 border-top">
