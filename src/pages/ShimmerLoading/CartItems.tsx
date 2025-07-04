@@ -17,7 +17,7 @@ const CartItems: React.FC = () => {
   }, [showMobileSummary]);
 
   return (
-    <div className="bg-light border-start border-2 border-light-subtle min-vh-100">
+    <div className="bg-light border-start border-2 border-light-subtle">
       <div className="sticky-top" style={{ top: '1rem' }}>
         <div className="bg-white shadow-sm rounded-3 m-3">
           <div className="p-4">

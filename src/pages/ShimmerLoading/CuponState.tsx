@@ -25,7 +25,6 @@ function CouponInput() {
     تطبيق الكود
   </button>
 </div>
-
     </>
   );
 }
