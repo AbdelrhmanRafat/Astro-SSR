@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import CouponInput from "./CuponState";
 import OrderSummaryContent from "./OrderSummaryContent";
@@ -16,40 +17,49 @@ const CartItems: React.FC = () => {
   }, [showMobileSummary]);
 
   return (
-    <div className="container-fluid bg-secondary-subtle min-vh-md-100">
-      <div className="row">
-        <div className="col-12 col-md-8 d-flex flex-column justify-content-start align-items-start gap-3 p-1 p-md-4 py-md-5">
-
-          {/* ✅ Mobile Header Toggle */}
-          <div
-            className="d-md-none container d-flex justify-content-between align-items-center fw-medium"
-            onClick={() => setShowMobileSummary(prev => !prev)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="d-flex align-items-center gap-2 text-primary">
-              <span>ملخص الطلب</span>
-              <span>{showMobileSummary ? "⬆" : "⬇"}</span>
-            </div>
-            <span className="text-nowrap">ج.م ٩٦٥٨١٠٫٠٠</span>
-          </div>
-
-          {/* ✅ Order Summary Content */}
-          <div className="container d-md-flex flex-column gap-3">
-            {/* Mobile content */}
+    <div className="bg-light border-start border-2 border-light-subtle min-vh-100">
+      <div className="sticky-top" style={{ top: '1rem' }}>
+        <div className="bg-white shadow-sm rounded-3 m-3">
+          <div className="p-4">
+            {/* ✅ Mobile Header Toggle */}
             <div
-              className="d-md-none overflow-hidden transition-all"
-              style={{
-                height: showMobileSummary ? height : "0px",
-                transition: "height 0.4s ease",
-              }}
-              ref={contentRef}
+              className="d-lg-none d-flex justify-content-between align-items-center p-3 bg-light rounded-3 mb-3"
+              onClick={() => setShowMobileSummary(prev => !prev)}
+              style={{ cursor: "pointer" }}
             >
-              <OrderSummaryContent />
+              <div className="d-flex align-items-center gap-2">
+                <i className={`bi bi-chevron-${showMobileSummary ? 'up' : 'down'} text-primary`}></i>
+                <span className="fw-semibold text-primary">ملخص الطلب</span>
+              </div>
+              <div className="d-flex align-items-center gap-2">
+                <span className="fw-bold text-dark">ج.م ٩٦٥٨١٠٫٠٠</span>
+                <i className="bi bi-receipt text-muted"></i>
+              </div>
             </div>
 
-            {/* Desktop content */}
-            <div className="d-none d-md-block">
-              <OrderSummaryContent />
+            {/* ✅ Order Summary Content */}
+            <div>
+              {/* Mobile content */}
+              <div
+                className="d-lg-none overflow-hidden"
+                style={{
+                  height: showMobileSummary ? height : "0px",
+                  transition: "height 0.4s ease",
+                }}
+                ref={contentRef}
+              >
+                <OrderSummaryContent />
+              </div>
+
+              {/* Desktop content */}
+              <div className="d-none d-lg-block">
+                <div className="mb-3">
+                  <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">
+                    <i className="bi bi-cart3 me-2"></i>ملخص الطلب
+                  </h5>
+                </div>
+                <OrderSummaryContent />
+              </div>
             </div>
           </div>
         </div>

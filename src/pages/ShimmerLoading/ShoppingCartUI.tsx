@@ -35,18 +35,25 @@ const ShoppingCartUI = () => {
   // Error state
   if (error && !isLoading) {
     return (
-      <div className="min-vh-100 bg-light p-3">
-        <div className="container-xxl">
-          <div className="text-center py-5">
-            <div className="bg-danger bg-opacity-10 border border-danger border-opacity-25 rounded p-4">
-              <h2 className="fs-4 fw-semibold text-danger mb-2">خطأ في تحميل المنتجات</h2>
-              <p className="text-danger mb-3">{error}</p>
-              <button
-                onClick={() => window.location.reload()}
-                className="btn btn-danger"
-              >
-                إعادة المحاولة
-              </button>
+      <div className="min-vh-100 bg-light d-flex align-items-center justify-content-center">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-8 col-lg-6">
+              <div className="card border-0 shadow-sm">
+                <div className="card-body text-center py-5">
+                  <div className="mb-4">
+                    <i className="bi bi-exclamation-triangle text-danger" style={{ fontSize: '3rem' }}></i>
+                  </div>
+                  <h2 className="h4 fw-bold text-danger mb-3">خطأ في تحميل المنتجات</h2>
+                  <p className="text-muted mb-4">{error}</p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="btn btn-danger px-4 py-2"
+                  >
+                    إعادة المحاولة
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -55,35 +62,22 @@ const ShoppingCartUI = () => {
   }
 
   return (
-    <div dir="rtl" className="w-100">
-      <div>
+    <div dir="rtl" className="min-vh-100 bg-light">
+      <div className="container-fluid">
         {isLoading ? (
           <ShimmerLoader />
         ) : (
-          <div dir="rtl" className="w-100">
-  <div>
-    {isLoading ? (
-      <ShimmerLoader />
-    ) : (
-      <div className="w-100">
-  <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-start w-100">
-    
-    {/* Shipping Form */}
-    <div className="w-100 w-md-50 px-0">
-      <ShippingForm />
-    </div>
+          <div className="row g-0">
+            {/* Shipping Form */}
+            <div className="col-12 col-lg-8 order-2 order-lg-1">
+              <ShippingForm />
+            </div>
 
-    {/* Cart Items */}
-    <div className="w-100 w-md-50 px-0">
-      <CartItems />
-    </div>
-
-  </div>
-</div>
-
-    )}
-  </div>
-</div>
+            {/* Cart Items */}
+            <div className="col-12 col-lg-4 order-1 order-lg-2">
+              <CartItems />
+            </div>
+          </div>
         )}
       </div>
     </div>

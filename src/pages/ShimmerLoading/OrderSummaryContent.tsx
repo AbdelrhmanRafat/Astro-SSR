@@ -1,78 +1,75 @@
-import React, { useState, useRef, useEffect } from 'react';
-import CouponInput from './CuponState';
+
+import React from 'react';
 
 const OrderSummaryContent = () => (
-  <div className="d-flex flex-column w-100 gap-3 mt-3">
-    {/* المنتجات */}
-    <div className="d-flex justify-content-between align-items-center">
-      {/* صورة المنتج */}
-      <div className="d-flex align-items-center gap-3">
-        <div className="position-relative">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/042/681/826/non_2x/illustration-of-wooden-mahogany-side-chair-on-white-vector.jpg"
-            alt="Product"
-            className="rounded"
-            style={{ width: '64px', height: '64px', objectFit: 'cover' }}
-          />
-          <span
-            className="position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center"
-            style={{
-              top: '-8px',
-              left: '-8px',
-              width: '20px',
-              height: '20px',
-              fontSize: '12px',
-            }}
-          >
-            2
-          </span>
+  <div className="d-flex flex-column gap-4">
+    {/* Product Items */}
+    <div className="d-flex flex-column gap-3">
+      <div className="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
+        {/* Product Image & Info */}
+        <div className="d-flex align-items-center gap-3">
+          <div className="position-relative">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/042/681/826/non_2x/illustration-of-wooden-mahogany-side-chair-on-white-vector.jpg"
+              alt="Product"
+              className="rounded-3 shadow-sm"
+              style={{ width: '64px', height: '64px', objectFit: 'cover' }}
+            />
+            <span
+              className="position-absolute bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+              style={{
+                top: '-8px',
+                left: '-8px',
+                width: '24px',
+                height: '24px',
+                fontSize: '11px',
+                fontWeight: 'bold'
+              }}
+            >
+              2
+            </span>
+          </div>
+          <div>
+            <h6 className="fw-semibold text-dark mb-1">كوفي كورنر 40×120سم- LOG674</h6>
+            <p className="text-muted small mb-0">
+              <i className="bi bi-tag me-1"></i>CODE123
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 className="fw-medium text-dark mb-1 fs-6">كوفي كورنر 40×120سم- LOG674</h3>
-          <p className="text-muted small mb-0">CODE123</p>
-        </div>
-      </div>
 
-      {/* السعر */}
-      <div className="text-end">
-        <p className="fw-bold fs-6 mb-0">ج.م 150.00</p>
+        {/* Price */}
+        <div className="text-end">
+          <p className="fw-bold text-primary mb-0">ج.م 150.00</p>
+        </div>
       </div>
     </div>
 
-    {/* إدخال كوبون */}
-    <CouponInput />
+    {/* Divider */}
+    <hr className="my-2" />
 
-    {/* ملاحظات */}
-    {[1, 2].map((_, i) => (
-      <div key={i} className="border rounded p-3 bg-white">
-        <div className="d-flex justify-content-start align-items-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="none" stroke="#606060" strokeWidth="32">
-            <circle cx="256" cy="256" r="208" />
-            <line x1="256" y1="160" x2="256" y2="280" />
-            <circle cx="256" cy="344" r="16" fill="#606060" />
-          </svg>
-          <p className="small text-muted mb-0">
-            ملاحظة: رسوم إضافية 50 جنيه لهذا المنتج
-          </p>
-        </div>
-      </div>
-    ))}
-
-    {/* الإجماليات */}
-    <div className="d-flex flex-column text-black gap-2" dir="rtl">
-      <div className="d-flex justify-content-between">
-        <span className="fw-normal fs-6">المجموع الفرعي</span>
-        <span className="fw-normal fs-6">£E ٩٦٢١٠٠٫٠٠</span>
-      </div>
-      <div className="d-flex justify-content-between">
-        <span className="fw-normal fs-6">الشحن</span>
-        <span className="fw-normal fs-6">£E ٣٧٠٠٫٠٠</span>
+    {/* Totals Section */}
+    <div className="d-flex flex-column gap-3">
+      <div className="d-flex justify-content-between align-items-center">
+        <span className="text-muted">المجموع الفرعي:</span>
+        <span className="fw-semibold">ج.م 300.00</span>
       </div>
       <div className="d-flex justify-content-between align-items-center">
-        <span className="fw-normal fs-6">الإجمالي</span>
-        <div className="d-flex align-items-center gap-2">
-          <span className="fw-normal fs-6">£E ٩٦٥٨١٠٫٠٠</span>
-          <span className="text-muted small">EGP</span>
+        <span className="text-muted">الشحن:</span>
+        <span className="fw-semibold">ج.م 50.00</span>
+      </div>
+      <div className="d-flex justify-content-between align-items-center">
+        <span className="text-muted">الضرائب:</span>
+        <span className="fw-semibold">ج.م 25.00</span>
+      </div>
+      
+      {/* Final Total */}
+      <div className="border-top pt-3">
+        <div className="d-flex justify-content-between align-items-center">
+          <span className="h6 fw-bold text-dark">المجموع الكلي:</span>
+          <div className="d-flex align-items-center gap-2">
+            <span className="h5 fw-bold text-primary mb-0">ج.م ٩٦٥٨١٠٫٠٠</span>
+            <small className="text-muted">شامل الضرائب</small>
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+
 // 📁 ShimmerMain.jsx
 import React from 'react';
 import ShimmerForm from './shimmerForm';
@@ -5,21 +6,23 @@ import ShimmerCart from './ShimmerCart';
 
 const ShimmerLoader = () => {
   return (
-    <div className="w-100">
-  <div className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-start w-100">
+    <div className="min-vh-100 bg-light">
+      <div className="container-fluid">
+        <div className="row g-0">
+          {/* ✅ Shimmer Form Placeholder */}
+          <div className="col-12 col-lg-8 order-2 order-lg-1">
+            <ShimmerForm />
+          </div>
 
-    {/* ✅ Shimmer Form Placeholder */}
-    <div className="w-100 w-md-50 px-0">
-      <ShimmerForm />
+          {/* ✅ Shimmer Cart Placeholder */}
+          <div className="col-12 col-lg-4 order-1 order-lg-2 d-none d-lg-block">
+            <div className="sticky-top" style={{ top: '1rem' }}>
+              <ShimmerCart />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    {/* ✅ Shimmer Cart Placeholder - Hidden on Mobile */}
-    <div className="w-100 w-md-50 px-0 sticky-md-top align-self-md-start d-none d-md-block">
-      <ShimmerCart />
-    </div>
-
-  </div>
-</div>
   );
 }
 
