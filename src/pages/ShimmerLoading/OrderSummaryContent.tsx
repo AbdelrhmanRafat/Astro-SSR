@@ -1,7 +1,7 @@
-
 import React from 'react';
+import CouponInput from './CuponState';
 
-const OrderSummaryContent = () => (
+const OrderSummary = () => (
   <div className="d-flex flex-column gap-4">
     {/* Product Items */}
     <div className="d-flex flex-column gap-3">
@@ -44,11 +44,30 @@ const OrderSummaryContent = () => (
       </div>
     </div>
 
+    {/* Coupon Input */}
+    <CouponInput />
+
+    {/* Notes */}
+    {[1, 2].map((_, i) => (
+      <div key={i} className="border rounded p-3 bg-white">
+        <div className="d-flex justify-content-start align-items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="none" stroke="#606060" strokeWidth="32">
+            <circle cx="256" cy="256" r="208" />
+            <line x1="256" y1="160" x2="256" y2="280" />
+            <circle cx="256" cy="344" r="16" fill="#606060" />
+          </svg>
+          <p className="small text-muted mb-0">
+            ملاحظة: رسوم إضافية 50 جنيه لهذا المنتج
+          </p>
+        </div>
+      </div>
+    ))}
+
     {/* Divider */}
     <hr className="my-2" />
 
     {/* Totals Section */}
-    <div className="d-flex flex-column gap-3">
+    <div className="d-flex flex-column gap-3" dir="rtl">
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-muted">المجموع الفرعي:</span>
         <span className="fw-semibold">ج.م 300.00</span>
@@ -61,14 +80,13 @@ const OrderSummaryContent = () => (
         <span className="text-muted">الضرائب:</span>
         <span className="fw-semibold">ج.م 25.00</span>
       </div>
-      
+
       {/* Final Total */}
       <div className="border-top pt-3">
         <div className="d-flex justify-content-between align-items-center">
           <span className="h6 fw-bold text-dark">المجموع الكلي:</span>
           <div className="d-flex align-items-center gap-2">
             <span className="h5 fw-bold text-primary mb-0">ج.م ٩٦٥٨١٠٫٠٠</span>
-            <small className="text-muted">شامل الضرائب</small>
           </div>
         </div>
       </div>
@@ -76,4 +94,4 @@ const OrderSummaryContent = () => (
   </div>
 );
 
-export default OrderSummaryContent;
+export default OrderSummary;
