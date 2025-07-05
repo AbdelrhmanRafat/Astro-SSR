@@ -178,7 +178,7 @@ const OrderSummary = () => (
     <hr className="my-2" />
 
     {/* Totals Section */}
-    <div className="d-flex flex-column gap-3" dir="rtl">
+    <div className="d-flex flex-column gap-3">
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-muted">المجموع الفرعي:</span>
         <span className="fw-semibold">ج.م 300.00</span>

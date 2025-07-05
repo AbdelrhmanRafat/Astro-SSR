@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ShippingForm: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const ShippingForm: React.FC = () => {
                     <input
                       type="text"
                       id="phoneOrEmail"
-                      className="form-control form-control-lg text-end shadow-sm border-2"
+                      className="form-control form-control-lg  shadow-sm border-2"
                       placeholder="الايميل أو رقم التليفون"
                     />
                     <label htmlFor="phoneOrEmail" className="text-muted">الايميل أو رقم التليفون</label>
@@ -31,7 +31,7 @@ const ShippingForm: React.FC = () => {
                   <div className="form-floating w-100 w-md-50 position-relative">
                     <select
                       id="country"
-                      className="form-select text-end border rounded-3 shadow-sm pe-5 pt-4"
+                      className="form-select border rounded-3 shadow-sm pe-5 pt-4"
                       style={{
                         appearance: "none",
                         backgroundImage:
@@ -55,7 +55,7 @@ const ShippingForm: React.FC = () => {
                       <div className="form-floating">
                         <input
                           type="text"
-                          className="form-control form-control-lg text-end shadow-sm border-2"
+                          className="form-control form-control-lg shadow-sm border-2"
                           id="firstName"
                           placeholder="الاسم الأول"
                         />
@@ -66,7 +66,7 @@ const ShippingForm: React.FC = () => {
                       <div className="form-floating">
                         <input
                           type="text"
-                          className="form-control form-control-lg text-end shadow-sm border-2"
+                          className="form-control form-control-lg shadow-sm border-2"
                           id="lastName"
                           placeholder="الاسم الثاني"
                         />
@@ -79,7 +79,7 @@ const ShippingForm: React.FC = () => {
                   <div className="form-floating">
                     <input
                       type="text"
-                      className="form-control form-control-lg text-end shadow-sm border-2"
+                      className="form-control form-control-lg shadow-sm border-2"
                       id="address"
                       placeholder="العنوان"
                     />
@@ -92,7 +92,7 @@ const ShippingForm: React.FC = () => {
                       <div className="form-floating">
                         <input
                           type="text"
-                          className="form-control form-control-lg text-end shadow-sm border-2"
+                          className="form-control form-control-lg shadow-sm border-2"
                           id="city"
                           placeholder="مدينة"
                         />
@@ -103,7 +103,7 @@ const ShippingForm: React.FC = () => {
                       <div className="form-floating">
                         <select
                           id="governorate"
-                          className="form-select text-end border rounded-3 shadow-sm pe-5 pt-4"
+                          className="form-select border rounded-3 shadow-sm pe-5 pt-4"
                           style={{
                             appearance: "none",
                             backgroundImage:
@@ -134,7 +134,7 @@ const ShippingForm: React.FC = () => {
                         <input
                           type="text"
                           id="mobile"
-                          className="form-control border-0 shadow-none bg-transparent text-end"
+                          className="form-control border-0 shadow-none bg-transparent"
                           placeholder="رقم الموبايل"
                           style={{ paddingRight: '0.75rem' }}
                         />
