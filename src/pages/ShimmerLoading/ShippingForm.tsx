@@ -1,14 +1,9 @@
-
-import React, { useEffect } from 'react';
-
 const ShippingForm: React.FC = () => {
   return (
-    <div className="bg-white min-vh-100 d-flex flex-column gap-3">
+    <div className="bg-white h-100 d-flex flex-column gap-3">
       <div className="container-fluid">
-        <div className="row">
-          <div className="col-12 col-xl-10 offset-xl-1">
-            <div className="py-4 px-3 px-md-4">
-              <form className="d-flex flex-column gap-4">
+        <div className="d-flex justify-content-end align-items-center p-3">
+              <form className="d-flex flex-column gap-4 ">
                 {/* معلومات التواصل */}
                 <div className="d-flex flex-column gap-3">
                   <h5 className="fw-bold text-dark border-bottom pb-2">معلومات التواصل</h5>
@@ -166,8 +161,6 @@ const ShippingForm: React.FC = () => {
                   </div>
                 </div>
               </form>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -17,10 +17,10 @@ const CartItems: React.FC = () => {
   }, [showMobileSummary]);
 
   return (
-    <div className="bg-light border-start border-2 border-light-subtle">
+    <div className="bg-secondary-muted container-fluid border-start border-2 border-light-subtle">
       <div className="sticky-top" style={{ top: '1rem' }}>
-        <div className="bg-white shadow-sm rounded-3 m-3">
-          <div className="p-4">
+        <div className="">
+          <div className="p-2 p-md-3">
             {/* ✅ Mobile Header Toggle */}
             <div
               className="d-lg-none d-flex justify-content-between align-items-center p-3 bg-light rounded-3 mb-3"
@@ -52,13 +52,15 @@ const CartItems: React.FC = () => {
               </div>
 
               {/* Desktop content */}
-              <div className="d-none d-lg-block">
+              <div className="row">
+              <div className="d-none mb-5 d-lg-block col-md-9 col-12">
                 <div className="mb-3">
                   <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">
                     <i className="bi bi-cart3 me-2"></i>ملخص الطلب
                   </h5>
                 </div>
                 <OrderSummaryContent />
+              </div>
               </div>
             </div>
           </div>
