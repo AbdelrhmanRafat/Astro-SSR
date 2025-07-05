@@ -7,6 +7,16 @@
   padding-bottom: 0.625rem;
 }
 
+  .fs-7 {
+    font-size: 13px !important;
+  }
+
+@media (min-width: 768px) {
+  .w-md-fit {
+    width: fit-content !important;
+  }
+}
+
 @media (min-width: 768px) {
     .min-vh-md-100 {
       min-height: 100vh !important;
