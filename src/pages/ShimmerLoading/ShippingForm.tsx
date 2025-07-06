@@ -57,7 +57,7 @@ const ShippingForm: React.FC = () => {
               </div>
 
               {/* الاسم الأول والاسم الثاني */}
-              <div className="row g-3">
+              <div className="row g-0 g-md-3">
                 <div className="col-md-6 col-12">
                   <div className="form-floating">
                     <input
