@@ -5,7 +5,7 @@ const OrderSummary = () => (
   <div className="d-flex flex-column gap-1 p-1">
     {/* Product Items */}
     <div className="d-flex flex-column gap-3">
-      <div className="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
+      <div className="d-flex justify-content-between align-items-center p-3  rounded-3">
         {/* Product Image & Info */}
         <div className="d-flex align-items-center gap-3">
           <div className="position-relative">
@@ -49,7 +49,7 @@ const OrderSummary = () => (
 
     {/* Notes */}
     {[1, 2].map((_, i) => (
-      <div key={i} className="border rounded p-3 bg-white">
+      <div key={i} className="border border-secondary rounded p-3">
         <div className="d-flex justify-content-start align-items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="none" stroke="#606060" strokeWidth="32">
             <circle cx="256" cy="256" r="208" />
