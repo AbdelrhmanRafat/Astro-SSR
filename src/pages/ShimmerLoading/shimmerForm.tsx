@@ -21,7 +21,7 @@ const ShimmerForm = () => {
             {/* عنوان الشحن Skeleton */}
             <div className="d-flex flex-column gap-3">
               <div className="placeholder-glow">
-                <div className="placeholder rounded border-bottom pb-2" style={{height: '24px', width: '120px'}}></div>
+                <div className="placeholder rounded fw-bold mb-3 border-bottom pb-2" style={{height: '24px', width: '120px'}}></div>
               </div>
 
               {/* البلد Skeleton */}
@@ -65,9 +65,9 @@ const ShimmerForm = () => {
               {/* رقم الموبايل Skeleton */}
               <div className="w-100">
                 <div className="placeholder-glow">
-                  <div className="d-flex align-items-center justify-content-between border rounded-3 px-3 py-2 bg-white" style={{height: '58px'}}>
+                  <div className="d-flex align-items-center justify-content-between border bg-white rounded-3 px-2" style={{height: '58px'}}>
                     <div className="placeholder rounded flex-grow-1" style={{height: '40px'}}></div>
-                    <div className="ms-3 flex-shrink-0">
+                    <div className="flex-shrink-0">
                       <div className="placeholder rounded" style={{width: '20px', height: '20px'}}></div>
                     </div>
                   </div>

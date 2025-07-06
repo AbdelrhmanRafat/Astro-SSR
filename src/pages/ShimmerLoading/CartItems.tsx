@@ -27,7 +27,7 @@ const CartItems: React.FC = () => {
               onClick={() => setShowMobileSummary(prev => !prev)}
               style={{ cursor: "pointer" }}
             >
-              <div className="d-flex align-items-center gap-2">
+              <div className="d-flex align-items-center gap-2 py-1">
                 <i className={`bi bi-chevron-${showMobileSummary ? 'up' : 'down'} text-primary`}></i>
                 <span className="fw-bold text-black">ملخص الطلب</span>
               </div>

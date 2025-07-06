@@ -22,7 +22,7 @@ const ShippingForm: React.FC = () => {
 
             {/* عنوان الشحن */}
             <div className="d-flex flex-column gap-3">
-              <h5 className="fw-semibold fs-4 text-dark border-bottom pb-2">عنوان الشحن</h5>
+              <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">عنوان الشحن</h5>
 
               {/* البلد */}
               <div className="form-floating">
@@ -122,7 +122,7 @@ const ShippingForm: React.FC = () => {
 
               {/* رقم الموبايل */}
               <div className="w-100">
-                <div className="d-flex align-items-center justify-content-between border rounded-3 px-3 py-2 bg-white">
+                <div className="d-flex align-items-center justify-content-between border bg-white rounded-3 px-2">
                   <div className="form-floating flex-grow-1">
                     <input
                       type="text"
@@ -133,7 +133,7 @@ const ShippingForm: React.FC = () => {
                     />
                     <label htmlFor="mobile" className="text-muted fs-7">رقم الموبايل للتواصل بخصوص الطلب</label>
                   </div>
-                  <div className="ms-3 flex-shrink-0">
+                  <div className="flex-shrink-0">
                     <svg className="text-muted" width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
