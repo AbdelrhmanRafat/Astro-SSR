@@ -21,7 +21,7 @@ const ShippingForm: React.FC = () => {
             </div>
 
             {/* عنوان الشحن */}
-            <div className="d-flex flex-column gap-3">
+            <div className="d-flex flex-column gap-2">
               <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">عنوان الشحن</h5>
 
               {/* البلد */}
@@ -145,7 +145,7 @@ const ShippingForm: React.FC = () => {
                 </div>
               </div>
               {/* الأزرار */}
-              <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 pt-4 border-top my-4">
+              <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 mb-md-0 mb-4">
                 {/* زر العودة */}
                 <button
                   type="button"
