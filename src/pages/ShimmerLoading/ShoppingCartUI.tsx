@@ -17,8 +17,8 @@ const ShoppingCartUI = () => {
 
   return (
     // dir="rtl" Here is very Important....
-    <div dir="rtl" className="min-vh-100 bg-light">
-      <div className="container-fluid">
+    <div dir="rtl" className="bg-white">
+      <div className="w-100">
         {isLoading ? (
           <ShimmerLoader />
         ) : (

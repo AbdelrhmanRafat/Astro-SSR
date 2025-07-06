@@ -17,8 +17,8 @@ const ShippingForm: React.FC = () => {
 
           <form className="d-flex flex-column gap-4 col-lg-9 col-12">
             {/* معلومات التواصل */}
-            <div className="d-flex flex-column gap-3">
-              <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">معلومات التواصل</h5>
+            <div className="d-flex flex-column gap-2">
+              <h5 className="fw-bold text-dark border-bottom pb-2">معلومات التواصل</h5>
               <div className="form-floating">
                 <input
                   type="text"
@@ -32,7 +32,7 @@ const ShippingForm: React.FC = () => {
 
             {/* عنوان الشحن */}
             <div className="d-flex flex-column gap-2">
-              <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">عنوان الشحن</h5>
+              <h5 className="fw-bold text-dark border-bottom pb-2">عنوان الشحن</h5>
 
               {/* البلد */}
               <div className="form-floating">
