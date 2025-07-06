@@ -1,5 +1,15 @@
+import { useState } from "react";
 
 const ShippingForm: React.FC = () => {
+    const [mobile, setMobile] = useState("");
+
+  const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // نسمح فقط بالأرقام
+    if (/^\d*$/.test(value)) {
+      setMobile(value);
+    }
+  };
   return (
     <div className="bg-white h-100 d-flex flex-column gap-3 pt-2 pt-md-0">
       <div className="container-lg w-100 px-0 px-md-3 mx-0 mx-md-auto row">
@@ -127,6 +137,8 @@ const ShippingForm: React.FC = () => {
                     <input
                       type="text"
                       id="mobile"
+                      value={mobile}
+                      onChange={handleMobileChange}
                       className="form-control border-0 shadow-none bg-transparent fs-6"
                       placeholder="رقم الموبايل"
                       style={{ paddingRight: '0.75rem' }}
