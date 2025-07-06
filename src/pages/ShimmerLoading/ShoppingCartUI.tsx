@@ -24,12 +24,12 @@ const ShoppingCartUI = () => {
         ) : (
           <div className="row g-0">
             {/* Shipping Form */}
-            <div className="col-12 col-lg-6 order-2 order-lg-1">
+            <div className="col-12 col-lg-6 order-2 order-lg-1 bg-white">
               <ShippingForm />
             </div>
 
             {/* Cart Items */}
-            <div className="col-12 col-lg-6 order-1 order-lg-2">
+            <div className="col-12 col-lg-6 order-1 order-lg-2 " style={{ backgroundColor: "#F3F4F5" }}>
               <CartItems />
             </div>
           </div>

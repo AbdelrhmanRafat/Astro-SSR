@@ -13,7 +13,7 @@ const ShimmerLoader = () => {
           </div>
 
           {/* ✅ Shimmer Cart Placeholder */}
-          <div className="col-12 col-lg-6 order-1 order-lg-2 d-none d-lg-block">
+          <div className="col-12 col-lg-6 order-1 order-lg-2 d-none d-lg-block" style={{ backgroundColor: "#F3F4F5" }}>
             <ShimmerCart />
           </div>
         </div>
