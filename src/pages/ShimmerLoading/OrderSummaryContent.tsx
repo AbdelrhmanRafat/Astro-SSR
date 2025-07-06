@@ -2,10 +2,10 @@ import React from 'react';
 import CouponInput from './CuponState';
 
 const OrderSummary = () => (
-  <div className="d-flex flex-column gap-2 p-1">
+  <div className="d-flex flex-column gap-2">
     {/* Product Items */}
     <div className="d-flex flex-column gap-3">
-      <div className="d-flex justify-content-between align-items-center p-3  rounded-3">
+      <div className="d-flex justify-content-between align-items-center">
         {/* Product Image & Info */}
         <div className="d-flex align-items-center gap-3">
           <div className="position-relative">
