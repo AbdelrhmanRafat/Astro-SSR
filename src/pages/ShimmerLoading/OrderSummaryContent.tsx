@@ -2,7 +2,7 @@ import React from 'react';
 import CouponInput from './CuponState';
 
 const OrderSummary = () => (
-  <div className="d-flex flex-column gap-1 p-1">
+  <div className="d-flex flex-column gap-2 p-1">
     {/* Product Items */}
     <div className="d-flex flex-column gap-3">
       <div className="d-flex justify-content-between align-items-center p-3  rounded-3">
