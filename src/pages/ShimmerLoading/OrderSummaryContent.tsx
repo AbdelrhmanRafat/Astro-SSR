@@ -16,7 +16,7 @@ const OrderSummary = () => (
               style={{ width: '64px', height: '64px', objectFit: 'cover' }}
             />
             <span
-              className="position-absolute bg-primary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+              className="position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
               style={{
                 top: '-8px',
                 left: '-8px',
@@ -39,7 +39,7 @@ const OrderSummary = () => (
 
         {/* Price */}
         <div className="text-end">
-          <p className="fw-bold text-primary mb-0">ج.م 150.00</p>
+          <p className="fw-bold text-black mb-0">ج.م 150.00</p>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@ const OrderSummary = () => (
         <div className="d-flex justify-content-between align-items-center">
           <span className="h6 fw-bold text-dark">المجموع الكلي:</span>
           <div className="d-flex align-items-center gap-2">
-            <span className="h5 fw-bold text-primary mb-0">ج.م ٩٦٥٨١٠٫٠٠</span>
+            <span className="h5 fw-bold text-black mb-0">ج.م ٩٦٥٨١٠٫٠٠</span>
           </div>
         </div>
       </div>

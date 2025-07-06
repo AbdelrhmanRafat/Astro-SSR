@@ -2,10 +2,10 @@
 const ShippingForm: React.FC = () => {
   return (
     <div className="bg-white h-100 d-flex flex-column gap-3 pt-2 pt-md-0">
-      <div className="container-md w-100 px-0 px-md-3 mx-0 mx-md-auto row">
+      <div className="container-lg w-100 px-0 px-md-3 mx-0 mx-md-auto row">
         <div className="d-flex justify-content-center justify-content-md-end align-items-center p-md-3">
 
-          <form className="d-flex flex-column gap-4 col-md-9 col-12">
+          <form className="d-flex flex-column gap-4 col-lg-9 col-12">
             {/* معلومات التواصل */}
             <div className="d-flex flex-column gap-3">
               <h5 className="fw-bold text-dark mb-3 border-bottom pb-2">معلومات التواصل</h5>

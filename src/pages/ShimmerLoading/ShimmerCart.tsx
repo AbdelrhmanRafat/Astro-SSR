@@ -7,13 +7,13 @@ const ShimmerCart = () => {
     <div className="d-flex flex-column gap-4 col-md-9 col-12" >
       {/* Product Items Skeleton */}
       < div className="d-flex flex-column gap-3" >
-        <div className="d-flex justify-content-between align-items-center p-3 bg-light rounded-3 placeholder-glow">
+        <div className="d-flex justify-content-between align-items-center p-3 rounded-3 placeholder-glow">
           {/* Product Image & Info Skeleton */}
           <div className="d-flex align-items-center gap-3">
             <div className="position-relative">
               <div className="placeholder rounded-3" style={{ width: '64px', height: '64px' }}></div>
               <div
-                className="position-absolute bg-primary rounded-circle"
+                className="position-absolute  rounded-circle"
                 style={{
                   top: '-8px',
                   left: '-8px',

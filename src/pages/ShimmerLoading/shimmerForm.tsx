@@ -3,11 +3,11 @@ import React from 'react';
 
 const ShimmerForm = () => {
   return (
-    <div className="bg-white h-100 d-flex flex-column gap-3  pt-2 pt-md-0">
-      <div className="container-md w-100 px-0 px-md-3 mx-0 mx-md-auto row">
+    <div className="bg-white h-100 d-flex flex-column gap-3 pt-2 pt-md-0">
+      <div className="container-lg w-100 px-0 px-md-3 mx-0 mx-md-auto row">
         <div className="d-flex justify-content-center justify-content-md-end align-items-center p-md-3">
 
-          <form className="d-flex flex-column gap-4 col-md-9 col-12">
+          <form className="d-flex flex-column gap-4 col-lg-9 col-12">
             {/* معلومات التواصل Skeleton */}
             <div className="d-flex flex-column gap-3">
               <div className="placeholder-glow">
@@ -75,7 +75,7 @@ const ShimmerForm = () => {
               </div>
 
               {/* الأزرار Skeleton */}
-              <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 pt-4 border-top mt-4">
+              <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 pt-4 border-top my-4">
                 {/* زر العودة Skeleton */}
                 <div className="placeholder-glow">
                   <div className="placeholder rounded" style={{height: '40px', width: '140px'}}></div>
