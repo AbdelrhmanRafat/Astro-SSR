@@ -63,11 +63,9 @@ const OrderSummary = () => (
       </div>
     ))}
 
-    {/* Divider */}
-    <hr className="my-2" />
-
+   
     {/* Totals Section */}
-    <div className="d-flex flex-column gap-3">
+    <div className="d-flex flex-column gap-3 pt-3">
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-muted">المجموع الفرعي:</span>
         <span className="fw-semibold">ج.م 300.00</span>
@@ -82,7 +80,7 @@ const OrderSummary = () => (
       </div>
 
       {/* Final Total */}
-      <div className="border-top pt-3">
+      <div className="">
         <div className="d-flex justify-content-between align-items-center">
           <span className="h6 fw-bold text-dark">المجموع الكلي:</span>
           <div className="d-flex align-items-center gap-2">

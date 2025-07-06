@@ -52,8 +52,6 @@ const ShimmerCart = () => {
       </div>
     ))}
 
-    {/* Divider */}
-    <hr className="my-2" />
 
     {/* Totals Section Skeleton */}
     <div className="d-flex flex-column gap-3 placeholder-glow">
@@ -71,7 +69,7 @@ const ShimmerCart = () => {
       </div>
 
       {/* Final Total Skeleton */}
-      <div className="border-top pt-3">
+      <div className="">
         <div className="d-flex justify-content-between align-items-center">
           <div className="placeholder rounded-3" style={{ height: '20px', width: '100px' }}></div>
           <div className="d-flex align-items-center gap-2">

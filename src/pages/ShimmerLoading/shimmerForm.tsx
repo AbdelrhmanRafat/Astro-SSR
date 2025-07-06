@@ -11,7 +11,7 @@ const ShimmerForm = () => {
             {/* معلومات التواصل Skeleton */}
             <div className="d-flex flex-column gap-3">
               <div className="placeholder-glow">
-                <div className="placeholder rounded fw-bold mb-3 border-bottom pb-2" style={{height: '24px', width: '150px'}}></div>
+                <div className="placeholder rounded fw-bold mb-3 pb-2" style={{height: '24px', width: '150px'}}></div>
               </div>
               <div className="placeholder-glow">
                 <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
