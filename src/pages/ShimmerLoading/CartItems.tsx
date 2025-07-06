@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import CouponInput from "./CuponState";
 import OrderSummaryContent from "./OrderSummaryContent";
+import ChevronIcon from "./ChevronIcon";
 
 const CartItems: React.FC = () => {
   const [showMobileSummary, setShowMobileSummary] = useState(false);
@@ -28,12 +29,11 @@ const CartItems: React.FC = () => {
               style={{ cursor: "pointer" }}
             >
               <div className="d-flex align-items-center gap-2">
-                <i className={`bi bi-chevron-${showMobileSummary ? 'up' : 'down'} text-primary`}></i>
+                <ChevronIcon open={showMobileSummary} />
                 <span className="fw-bold text-black">ملخص الطلب</span>
               </div>
               <div className="d-flex align-items-center gap-2">
                 <span className="fw-bold text-dark">ج.م ٩٦٥٨١٠٫٠٠</span>
-                <i className="bi bi-receipt text-muted"></i>
               </div>
             </div>
 
@@ -53,14 +53,14 @@ const CartItems: React.FC = () => {
 
               {/* Desktop content */}
               <div className="row">
-              <div className="d-none mb-5 d-lg-block col-md-9 col-12">
-                <div className="mb-3">
-                  <h5 className="fw-bold text-dark mb-3 pb-2">
-                    <i className="bi bi-cart3 me-2"></i>ملخص الطلب
-                  </h5>
+                <div className="d-none mb-5 d-lg-block col-md-9 col-12">
+                  <div className="mb-3">
+                    <h5 className="fw-bold text-dark mb-3 pb-2">
+                      ملخص الطلب
+                    </h5>
+                  </div>
+                  <OrderSummaryContent />
                 </div>
-                <OrderSummaryContent />
-              </div>
               </div>
             </div>
           </div>
