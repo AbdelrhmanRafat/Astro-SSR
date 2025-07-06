@@ -58,7 +58,7 @@ const ShippingForm: React.FC = () => {
 
               {/* الاسم الأول والاسم الثاني */}
               <div className="row g-3">
-                <div className="col-6">
+                <div className="col-md-6 col-12">
                   <div className="form-floating">
                     <input
                       type="text"
@@ -69,7 +69,7 @@ const ShippingForm: React.FC = () => {
                     <label htmlFor="firstName" className="text-muted fs-7">الاسم الأول</label>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-12">
                   <div className="form-floating">
                     <input
                       type="text"
