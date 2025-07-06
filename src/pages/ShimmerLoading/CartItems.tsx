@@ -55,7 +55,7 @@ const CartItems: React.FC = () => {
               <div className="row">
               <div className="d-none mb-5 d-lg-block col-md-9 col-12">
                 <div className="mb-3">
-                  <h5 className="fw-bold text-dark mb-3 pb-2">
+                  <h5 className="fw-bold text-dark mb-3 pb-2 text-start">
                     <i className="bi bi-cart3 me-2"></i>ملخص الطلب
                   </h5>
                 </div>
