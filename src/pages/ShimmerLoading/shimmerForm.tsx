@@ -29,13 +29,13 @@ const ShimmerForm = () => {
               </div>
 
               {/* الاسم الأول والاسم الثاني Skeleton */}
-              <div className="row g-3">
-                <div className="col-6">
+              <div className="row g-2 g-md-3">
+                <div className="col-md-6 col-12">
                   <div className="placeholder-glow">
                     <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 col-12">
                   <div className="placeholder-glow">
                     <div className="placeholder rounded" style={{height: '58px', width: '100%'}}></div>
                   </div>
