@@ -19,15 +19,15 @@ const CartItems: React.FC = () => {
   return (
     <div className="border-start border-2 border-light-subtle" style={{ backgroundColor: "#E9EAEC" }}>
       <div className="sticky-top" style={{ top: '1rem' }}>
-        <div className="">
+        <div className="container-fluid">
           <div className="py-2 p-md-3">
             {/* ✅ Mobile Header Toggle */}
             <div
-              className="d-lg-none d-flex justify-content-between align-items-center"
+              className="d-lg-none d-flex justify-content-between align-items-center py-2"
               onClick={() => setShowMobileSummary(prev => !prev)}
               style={{ cursor: "pointer" }}
             >
-              <div className="d-flex align-items-center gap-2 py-1">
+              <div className="d-flex align-items-center gap-2">
                 <i className={`bi bi-chevron-${showMobileSummary ? 'up' : 'down'} text-primary`}></i>
                 <span className="fw-bold text-black">ملخص الطلب</span>
               </div>
