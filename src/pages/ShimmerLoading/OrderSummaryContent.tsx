@@ -5,7 +5,7 @@ const OrderSummary = () => (
   <div className="d-flex flex-column gap-2">
     {/* Product Items */}
     <div className="d-flex flex-column gap-3">
-      <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex justify-content-between align-items-center py-2">
         {/* Product Image & Info */}
         <div className="d-flex align-items-center gap-3">
           <div className="position-relative">
