@@ -2,7 +2,7 @@ import "../../styles/global.css";
 import React, { useState, useEffect } from 'react';
 import ShimmerLoader from "./ShimmerLoader";
 import ShippingForm from "./ShippingForm";
-import CartItems from "./CartItems";
+import Cart from "./Cart";
 
 const ShoppingCartUI = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,9 +28,9 @@ const ShoppingCartUI = () => {
               <ShippingForm />
             </div>
 
-            {/* Cart Items */}
+            {/* Cart  */}
             <div className="col-12 col-lg-6 order-1 order-lg-2 " style={{ backgroundColor: "#F3F4F5" }}>
-              <CartItems />
+             <Cart />
             </div>
           </div>
         )}

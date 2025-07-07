@@ -1,48 +1,11 @@
 import React from 'react';
 import CouponInput from './CuponState';
+import CartItems from './CartItems';
 
 const OrderSummary = () => (
   <div className="d-flex flex-column gap-2">
     {/* Product Items */}
-    <div className="d-flex flex-column gap-3">
-      <div className="d-flex justify-content-between align-items-center py-2">
-        {/* Product Image & Info */}
-        <div className="d-flex align-items-center gap-3">
-          <div className="position-relative">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/042/681/826/non_2x/illustration-of-wooden-mahogany-side-chair-on-white-vector.jpg"
-              alt="Product"
-              className="rounded-3 shadow-sm"
-              style={{ width: '64px', height: '64px', objectFit: 'cover' }}
-            />
-            <span
-              className="position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
-              style={{
-                top: '-8px',
-                left: '-8px',
-                width: '24px',
-                height: '24px',
-                fontSize: '11px',
-                fontWeight: 'bold'
-              }}
-            >
-              2
-            </span>
-          </div>
-          <div>
-            <h6 className="fw-semibold text-dark mb-1">كوفي كورنر 40×120سم- LOG674</h6>
-            <p className="text-muted small mb-0">
-              <i className="bi bi-tag me-1"></i>CODE123
-            </p>
-          </div>
-        </div>
-
-        {/* Price */}
-        <div className="text-end">
-          <p className="fw-bold text-black mb-0">ج.م 150.00</p>
-        </div>
-      </div>
-    </div>
+     <CartItems />
 
     {/* Coupon Input */}
     <CouponInput />

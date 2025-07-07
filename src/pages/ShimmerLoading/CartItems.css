@@ -1,0 +1,14 @@
+.fade-out {
+  animation: fadeSlideOut 0.4s forwards;
+}
+
+@keyframes fadeSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
