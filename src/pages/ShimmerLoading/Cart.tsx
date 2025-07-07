@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import CouponInput from "./CuponState";
 import OrderSummaryContent from "./OrderSummaryContent";
 import ChevronIcon from "./ChevronIcon";
+import { useCartStore } from "../../lib/Stores/cartStore";
 
 const Cart: React.FC = () => {
   const [showMobileSummary, setShowMobileSummary] = useState(false);
@@ -16,7 +17,7 @@ const Cart: React.FC = () => {
       setHeight("0px");
     }
   }, [showMobileSummary]);
-
+  const totalPrice = useCartStore((state) => state.totalPrice);
   return (
     <div className="border-start border-2 border-light-subtle">
       <div className="sticky-top" style={{ top: '1rem' }}>
@@ -33,7 +34,7 @@ const Cart: React.FC = () => {
                 <span className="fw-bold text-black">ملخص الطلب</span>
               </div>
               <div className="d-flex align-items-center gap-2">
-                <span className="fw-bold text-dark">ج.م ٩٦٥٨١٠٫٠٠</span>
+                <span className="fw-bold text-dark">ج.م {totalPrice}</span>
               </div>
             </div>
 

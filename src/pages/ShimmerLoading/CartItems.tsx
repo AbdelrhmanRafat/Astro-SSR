@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "./CartItems.css"; // استيراد ملف الأنيميشن
+import React, { useState, useCallback, useEffect } from "react";
+import "./CartItems.css";
+import { useCartStore } from "../../lib/Stores/cartStore"; // ✅ Import the Zustand store
 
 interface Product {
   id: number;
@@ -36,34 +37,54 @@ const CartItems: React.FC = () => {
   ]);
 
   const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [updatingId, setUpdatingId] = useState<number | null>(null);
 
-  const incrementQty = (id: number) => {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id && item.quantity < item.maxQty
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
+  const { setTotalPrice } = useCartStore(); // ✅ Zustand action
+
+  // ✅ Update total price every time cart changes
+  useEffect(() => {
+    const total = cart.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
     );
-  };
+    setTotalPrice(total);
+  }, [cart, setTotalPrice]);
 
-  const decrementQty = (id: number) => {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
-  };
+  const incrementQty = useCallback((id: number) => {
+    setUpdatingId(id);
+    setTimeout(() => {
+      setCart((prev) =>
+        prev.map((item) =>
+          item.id === id && item.quantity < item.maxQty
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+      setUpdatingId(null);
+    }, 150);
+  }, []);
 
-  const deleteItem = (id: number) => {
+  const decrementQty = useCallback((id: number) => {
+    setUpdatingId(id);
+    setTimeout(() => {
+      setCart((prev) =>
+        prev.map((item) =>
+          item.id === id && item.quantity > 1
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+      );
+      setUpdatingId(null);
+    }, 150);
+  }, []);
+
+  const deleteItem = useCallback((id: number) => {
     setDeletingId(id);
     setTimeout(() => {
       setCart((prev) => prev.filter((item) => item.id !== id));
       setDeletingId(null);
-    }, 400); // المدة نفس مدة الأنيميشن
-  };
+    }, 400);
+  }, []);
 
   return (
     <div className="d-flex flex-column gap-3">
@@ -88,7 +109,9 @@ const CartItems: React.FC = () => {
                 }}
               />
               <span
-                className="position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                className={`position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm ${
+                  updatingId === item.id ? "quantity-updating" : ""
+                }`}
                 style={{
                   top: "-8px",
                   left: "-8px",
@@ -109,36 +132,90 @@ const CartItems: React.FC = () => {
                 {item.code}
               </p>
 
-              {/* Delete Button as Link */}
+              {/* Enhanced Delete Button */}
               <button
-                className="btn btn-link p-0 text-danger small"
+                className="btn btn-link p-0 text-danger small delete-btn-enhanced"
                 onClick={() => deleteItem(item.id)}
                 disabled={deletingId === item.id}
+                aria-label={`حذف ${item.name}`}
               >
-                إزالة
+                {deletingId === item.id ? (
+                  <>
+                    <span
+                      className="spinner-border spinner-border-sm me-1"
+                      style={{ width: "12px", height: "12px" }}
+                      role="status"
+                    >
+                      <span className="visually-hidden">جاري الحذف...</span>
+                    </span>
+                    جاري الحذف...
+                  </>
+                ) : (
+                  "إزالة"
+                )}
               </button>
 
-              {/* Qty Controls */}
+              {/* Enhanced Qty Controls */}
               <div
-                className="d-flex align-items-center border rounded overflow-hidden mt-1"
+                className="d-flex align-items-center border rounded overflow-hidden mt-1 qty-controls"
                 style={{ width: "110px" }}
               >
                 <button
-                  className="btn btn-sm btn-light flex-fill border-end"
+                  className="btn btn-sm btn-light flex-fill border-end qty-btn"
                   onClick={() => decrementQty(item.id)}
-                  disabled={item.quantity <= 1 || deletingId === item.id}
+                  disabled={
+                    item.quantity <= 1 ||
+                    deletingId === item.id ||
+                    updatingId === item.id
+                  }
+                  aria-label="تقليل الكمية"
                 >
-                  -
+                  {updatingId === item.id ? (
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      style={{ width: "10px", height: "10px" }}
+                      role="status"
+                    >
+                      <span className="visually-hidden">Loading...</span>
+                    </span>
+                  ) : (
+                    "-"
+                  )}
                 </button>
-                <div className="flex-fill text-center small">{item.quantity}</div>
+                <div className="flex-fill text-center small">
+                  {item.quantity}
+                </div>
                 <button
-                  className="btn btn-sm btn-light flex-fill border-start"
+                  className="btn btn-sm btn-light flex-fill border-start qty-btn"
                   onClick={() => incrementQty(item.id)}
-                  disabled={item.quantity >= item.maxQty || deletingId === item.id}
+                  disabled={
+                    item.quantity >= item.maxQty ||
+                    deletingId === item.id ||
+                    updatingId === item.id
+                  }
+                  aria-label="زيادة الكمية"
                 >
-                  +
+                  {updatingId === item.id ? (
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      style={{ width: "10px", height: "10px" }}
+                      role="status"
+                    >
+                      <span className="visually-hidden">Loading...</span>
+                    </span>
+                  ) : (
+                    "+"
+                  )}
                 </button>
               </div>
+
+              {/* Max quantity warning */}
+              {item.quantity >= item.maxQty && (
+                <div className="text-warning small mt-1">
+                  <i className="bi bi-exclamation-triangle me-1"></i>
+                  الحد الأقصى: {item.maxQty} قطع
+                </div>
+              )}
             </div>
           </div>
 

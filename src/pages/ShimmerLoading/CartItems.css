@@ -1,3 +1,8 @@
+/* =============================================================================
+   Minimal Cart Items Enhancements
+   ============================================================================= */
+
+/* Original fade-out animation */
 .fade-out {
   animation: fadeSlideOut 0.4s forwards;
 }
@@ -10,5 +15,144 @@
   100% {
     opacity: 0;
     transform: translateY(-10px);
+  }
+}
+
+/* Enhanced Delete Button - Minimal styling */
+.delete-btn-enhanced {
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.delete-btn-enhanced:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.delete-btn-enhanced:focus {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+/* Enhanced Quantity Controls - Minimal styling */
+.qty-controls {
+  transition: box-shadow 0.2s ease;
+}
+
+.qty-btn {
+  transition: all 0.2s ease;
+  min-height: 32px;
+}
+
+.qty-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.qty-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.qty-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Quantity badge animation when updating */
+.quantity-updating {
+  animation: quantityPulse 0.6s ease infinite;
+}
+
+@keyframes quantityPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Loading spinner customization */
+.spinner-border-sm {
+  border-width: 2px;
+}
+
+/* Accessibility improvements */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .qty-controls {
+    width: 100px !important;
+  }
+  
+  .qty-btn {
+    min-height: 28px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .fade-out {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .quantity-updating {
+    animation: none;
+  }
+  
+  .qty-btn,
+  .delete-btn-enhanced,
+  .qty-controls {
+    transition: none;
+  }
+  
+  .qty-btn:active:not(:disabled) {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .qty-btn {
+    border: 2px solid #000;
+  }
+  
+  .delete-btn-enhanced {
+    border: 1px solid #dc3545;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+}
+
+/* Focus improvements for keyboard navigation */
+.qty-btn:focus-visible,
+.delete-btn-enhanced:focus-visible {
+  outline: 3px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .qty-btn,
+  .delete-btn-enhanced {
+    display: none !important;
+  }
+  
+  .spinner-border,
+  .spinner-border-sm {
+    display: none !important;
   }
 }

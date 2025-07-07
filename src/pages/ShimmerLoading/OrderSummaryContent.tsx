@@ -1,8 +1,12 @@
 import React from 'react';
 import CouponInput from './CuponState';
 import CartItems from './CartItems';
+import { useCartStore } from "../../lib/Stores/cartStore"; // ✅ Import the Zustand store
 
-const OrderSummary = () => (
+
+const OrderSummary : React.FC = () => {
+  const totalPrice = useCartStore((state) => state.totalPrice);
+  return (
   <div className="d-flex flex-column gap-2">
     {/* Product Items */}
      <CartItems />
@@ -31,7 +35,7 @@ const OrderSummary = () => (
     <div className="d-flex flex-column gap-3 pt-3">
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-muted">المجموع الفرعي:</span>
-        <span className="fw-semibold">ج.م 300.00</span>
+        <span className="fw-semibold">ج.م {totalPrice}</span>
       </div>
       <div className="d-flex justify-content-between align-items-center">
         <span className="text-muted">الشحن:</span>
@@ -47,12 +51,13 @@ const OrderSummary = () => (
         <div className="d-flex justify-content-between align-items-center">
           <span className="h6 fw-bold text-dark">المجموع الكلي:</span>
           <div className="d-flex align-items-center gap-2">
-            <span className="h5 fw-bold text-black mb-0">ج.م ٩٦٥٨١٠٫٠٠</span>
+            <span className="h5 fw-bold text-black mb-0">ج.م {totalPrice}</span>
           </div>
         </div>
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default OrderSummary;
