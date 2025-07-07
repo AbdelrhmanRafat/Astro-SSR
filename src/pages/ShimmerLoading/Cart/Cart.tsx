@@ -1,8 +1,9 @@
+import "./Cart.css";
 import React, { useState, useRef, useEffect } from "react";
-import CouponInput from "./CuponState";
-import OrderSummaryContent from "./OrderSummaryContent";
-import ChevronIcon from "./ChevronIcon";
-import { useCartStore } from "../../lib/Stores/cartStore";
+import { useCartStore } from "../../../lib/Stores/cartStore";
+import ChevronIcon from "../ChevronIcon/ChevronIcon";
+import OrderSummaryContent from "../OrderSummaryContent/OrderSummaryContent";
+
 
 const Cart: React.FC = () => {
   const [showMobileSummary, setShowMobileSummary] = useState(false);
@@ -25,9 +26,8 @@ const Cart: React.FC = () => {
         <div className="py-2 p-md-3">
           {/* ✅ Mobile Header Toggle */}
           <div
-            className="d-lg-none d-flex justify-content-between align-items-center py-2"
+            className="d-lg-none d-flex justify-content-between align-items-center py-2 cart-mobile-header-toggle"
             onClick={() => setShowMobileSummary(prev => !prev)}
-            style={{ cursor: "pointer" }}
           >
             <div className="d-flex align-items-center gap-2">
               <ChevronIcon open={showMobileSummary} />
@@ -43,11 +43,8 @@ const Cart: React.FC = () => {
           <div>
             {/* Mobile content */}
             <div
-              className="d-lg-none overflow-hidden"
-              style={{
-                height: showMobileSummary ? height : "0px",
-                transition: "height 0.4s ease",
-              }}
+              className="d-lg-none cart-mobile-content"
+              style={{ height: showMobileSummary ? height : "0px" }}
               ref={contentRef}
             >
               <OrderSummaryContent />

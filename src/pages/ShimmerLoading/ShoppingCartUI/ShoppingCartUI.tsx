@@ -1,8 +1,10 @@
-import "../../styles/global.css";
+import "../../../styles/global.css";
+import "./ShoppingCartUI.css";
 import React, { useState, useEffect } from 'react';
-import ShimmerLoader from "./ShimmerLoader";
-import ShippingForm from "./ShippingForm";
-import Cart from "./Cart";
+import ShimmerLoader from "../ShimmerLoader/ShimmerLoader";
+import ShippingForm from "../ShippingForm/ShippingForm";
+import Cart from "../Cart/Cart";
+
 
 const ShoppingCartUI = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +31,7 @@ const ShoppingCartUI = () => {
             </div>
 
             {/* Cart  */}
-            <div className="col-12 col-lg-6 order-1 order-lg-2" style={{ backgroundColor: "#F3F4F5" }}>
+            <div className="col-12 col-lg-6 order-1 order-lg-2 shoppingcartui-cart-bg">
              <Cart />
             </div>
           </div>

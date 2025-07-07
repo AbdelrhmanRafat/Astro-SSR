@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ShippingForm.css';
 
 const ShippingForm: React.FC = () => {
   const [mobile, setMobile] = useState("");
@@ -41,15 +42,7 @@ const ShippingForm: React.FC = () => {
               <div className="form-floating">
                 <select
                   id="country"
-                  className="form-select fs-6"
-                  style={{
-                    appearance: "none",
-                    backgroundImage:
-                      "url(\"data:image/svg+xml;utf8,<svg fill='%23606060' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M1.5 5.5l6 6 6-6'/></svg>\")",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "left 1rem center",
-                    backgroundSize: "1rem",
-                  }}
+                  className="form-select fs-6 shippingform-select-custom shippingform-select-country"
                 >
                   <option value="">اختر البلد</option>
                   <option>مصر</option>
@@ -113,15 +106,7 @@ const ShippingForm: React.FC = () => {
                   <div className="form-floating">
                     <select
                       id="governorate"
-                      className="form-select fs-6"
-                      style={{
-                        appearance: "none",
-                        backgroundImage:
-                          "url(\"data:image/svg+xml;utf8,<svg fill='%23606060' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M1.5 5.5l6 6 6-6'/></svg>\")",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "left 1rem center",
-                        backgroundSize: "1rem",
-                      }}
+                      className="form-select fs-6 shippingform-select-custom shippingform-select-governorate"
                     >
                       <option value="">اختر المحافظة</option>
                       <option>القاهرة</option>
@@ -142,9 +127,8 @@ const ShippingForm: React.FC = () => {
                       id="mobile"
                       value={mobile}
                       onChange={handleMobileChange}
-                      className="form-control border-0 shadow-none bg-transparent fs-6"
+                      className="form-control border-0 shadow-none bg-transparent fs-6 shippingform-input-mobile"
                       placeholder="رقم الموبايل"
-                      style={{ paddingRight: '0.75rem' }}
                     />
                     <label htmlFor="mobile" className="text-muted fs-7">رقم الموبايل للتواصل بخصوص الطلب</label>
                   </div>
@@ -180,9 +164,9 @@ const ShippingForm: React.FC = () => {
                       ادفع بأمان باستخدام بطاقة الائتمان الخاصة بك.
                     </div>
                     <div className="d-flex gap-2 flex-wrap mt-2">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="MasterCard" style={{ height: '15px' }} />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" style={{ height: '15px' }} />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png" alt="Orange" style={{ height: '15px' }} />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="MasterCard" className="shippingform-img-15" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" className="shippingform-img-15" />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png" alt="Orange" className="shippingform-img-15" />
                     </div>
                   </div>
                 </label>

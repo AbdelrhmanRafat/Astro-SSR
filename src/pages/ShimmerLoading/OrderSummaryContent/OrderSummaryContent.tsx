@@ -1,7 +1,7 @@
 import React from 'react';
-import CouponInput from './CuponState';
-import CartItems from './CartItems';
-import { useCartStore } from "../../lib/Stores/cartStore"; // ✅ Import the Zustand store
+import { useCartStore } from '../../../lib/Stores/cartStore';
+import CartItems from '../CartItems/CartItems';
+import CouponInput from '../CuponState/CuponState';
 
 
 const OrderSummary: React.FC = () => {

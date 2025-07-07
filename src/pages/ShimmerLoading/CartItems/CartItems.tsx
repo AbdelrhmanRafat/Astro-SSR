@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import "./CartItems.css";
-import { useCartStore } from "../../lib/Stores/cartStore"; // ✅ Import the Zustand store
+import { useCartStore } from "../../../lib/Stores/cartStore";
 
 interface Product {
   id: number;

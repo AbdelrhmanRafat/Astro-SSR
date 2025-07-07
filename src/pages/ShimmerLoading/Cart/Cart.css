@@ -1,0 +1,8 @@
+.cart-mobile-header-toggle {
+  cursor: pointer;
+}
+
+.cart-mobile-content {
+  overflow: hidden;
+  transition: height 0.4s ease;
+}

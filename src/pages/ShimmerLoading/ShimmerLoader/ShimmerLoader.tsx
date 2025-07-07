@@ -1,6 +1,6 @@
 import React from 'react';
-import ShimmerForm from './shimmerForm';
-import ShimmerCart from './ShimmerCart';
+import ShimmerForm from '../shimmerForm/shimmerForm';
+import ShimmerCart from '../ShimmerCart/ShimmerCart';
 
 const ShimmerLoader = () => {
   return (

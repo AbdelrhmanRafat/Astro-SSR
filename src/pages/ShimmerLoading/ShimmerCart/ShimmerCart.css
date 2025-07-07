@@ -1,0 +1,87 @@
+.shimmercart-sticky-top {
+  position: sticky;
+  top: 1rem;
+}
+
+.shimmercart-placeholder-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.shimmercart-placeholder-24-100 {
+  height: 24px;
+  width: 100px;
+}
+
+.shimmercart-placeholder-64 {
+  width: 64px;
+  height: 64px;
+}
+
+.shimmercart-position-absolute {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 24px;
+  height: 24px;
+}
+
+.shimmercart-placeholder-18-180 {
+  height: 18px;
+  width: 180px;
+}
+
+.shimmercart-placeholder-14-80 {
+  height: 14px;
+  width: 80px;
+}
+
+.shimmercart-placeholder-18-80 {
+  height: 18px;
+  width: 80px;
+}
+
+.shimmercart-placeholder-48 {
+  height: 48px;
+  width: 100%;
+}
+
+.shimmercart-placeholder-14-85 {
+  height: 14px;
+  width: 85%;
+}
+
+.shimmercart-placeholder-16-100 {
+  height: 16px;
+  width: 100px;
+}
+
+.shimmercart-placeholder-16-80 {
+  height: 16px;
+  width: 80px;
+}
+
+.shimmercart-placeholder-16-60 {
+  height: 16px;
+  width: 60px;
+}
+
+.shimmercart-placeholder-16-70 {
+  height: 16px;
+  width: 70px;
+}
+
+.shimmercart-placeholder-16-65 {
+  height: 16px;
+  width: 65px;
+}
+
+.shimmercart-placeholder-20-100 {
+  height: 20px;
+  width: 100px;
+}
+
+.shimmercart-placeholder-24-120 {
+  height: 24px;
+  width: 120px;
+} 
