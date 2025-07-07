@@ -13,10 +13,7 @@ export default defineConfig({
   // This enables SSR
   output: 'server',
   
-  adapter: vercel({
-    // Optional: Specify additional Vercel adapter options here
-    // analytics: true,
-  }),
+  adapter: vercel({}),
 
 
   integrations: [react()],
