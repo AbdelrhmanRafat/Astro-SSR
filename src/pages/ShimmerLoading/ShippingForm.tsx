@@ -1,20 +1,21 @@
 import { useState } from "react";
 
 const ShippingForm: React.FC = () => {
-    const [mobile, setMobile] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("credit");
+  const [deliveryMethod, setDeliveryMethod] = useState("home");
 
   const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    // نسمح فقط بالأرقام
     if (/^\d*$/.test(value)) {
       setMobile(value);
     }
   };
+
   return (
     <div className="bg-white h-100 d-flex flex-column gap-3 pt-2 pt-md-0">
       <div className="container-lg w-100 px-0 px-md-3 mx-0 mx-md-auto row">
         <div className="d-flex justify-content-center justify-content-md-end align-items-center p-md-3">
-
           <form className="d-flex flex-column gap-4 col-lg-9 col-12">
             {/* معلومات التواصل */}
             <div className="d-flex flex-column gap-2">
@@ -26,7 +27,9 @@ const ShippingForm: React.FC = () => {
                   className="form-control form-control-lg border fs-6"
                   placeholder="الايميل أو رقم التليفون"
                 />
-                <label htmlFor="phoneOrEmail" className="text-muted fs-7">الايميل أو رقم التليفون</label>
+                <label htmlFor="phoneOrEmail" className="text-muted fs-7">
+                  الايميل أو رقم التليفون
+                </label>
               </div>
             </div>
 
@@ -156,24 +159,103 @@ const ShippingForm: React.FC = () => {
                   </div>
                 </div>
               </div>
-              {/* الأزرار */}
-              <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 mb-md-0 mb-4">
-                {/* زر العودة */}
-                <button
-                  type="button"
-                  className="w-fit btn text-secondary d-flex justify-content-start align-items-center gap-1"
-                >
-                  <span className="fs-7 fw-semibold">العودة لعربة التسوق</span>
-                </button>
-                <button
-                  type="submit"
-                  className="w-100 w-md-fit btn btn-primary text-center py-2 py-md-4 px-2"
-                >
-                  <span className="fs-7 fw-semibold">المتابعة لطريقة الشحن</span>
-                </button>
+            </div>
 
+            {/* خيارات الدفع */}
+            <div className="d-flex flex-column gap-2">
+              <h5 className="fw-bold text-dark">طريقة الدفع</h5>
+              <div className="d-flex flex-column gap-3">
 
+                {/* بطاقة ائتمان */}
+                <label className="border rounded p-3 d-flex gap-3 align-items-start">
+                  <input
+                    type="radio"
+                    name="payment"
+                    className="form-check-input mt-1"
+                    defaultChecked
+                  />
+                  <div className="flex-grow-1 ms-2">
+                    <div className="fw-semibold">بطاقة ائتمان</div>
+                    <div className="text-muted small">
+                      ادفع بأمان باستخدام بطاقة الائتمان الخاصة بك.
+                    </div>
+                    <div className="d-flex gap-2 flex-wrap mt-2">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="MasterCard" style={{ height: '15px' }} />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" style={{ height: '15px' }} />
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png" alt="Orange" style={{ height: '15px' }} />
+                    </div>
+                  </div>
+                </label>
+
+                {/* الدفع عند الاستلام */}
+                <label className="border rounded p-3 d-flex gap-3 align-items-start">
+                  <input
+                    type="radio"
+                    name="payment"
+                    className="form-check-input mt-1"
+                  />
+                  <div className="flex-grow-1 ms-2">
+                    <div className="fw-semibold">الدفع عند الاستلام</div>
+                    <div className="text-muted small">
+                      ادفع نقدًا عند الاستلام.
+                    </div>
+                  </div>
+                </label>
               </div>
+            </div>
+
+            {/* خيارات التوصيل */}
+            <div className="d-flex flex-column gap-2">
+              <h5 className="fw-bold text-dark">طريقة التوصيل</h5>
+              <div className="d-flex flex-column gap-3">
+
+                {/* توصيل إلى المنزل */}
+                <label className="border rounded p-3 d-flex gap-3 align-items-start">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    className="form-check-input mt-1"
+                    defaultChecked
+                  />
+                  <div className="flex-grow-1 ms-2">
+                    <div className="fw-semibold">توصيل إلى المنزل</div>
+                    <div className="text-muted small">
+                      سيتم توصيل طلبك إلى باب منزلك.
+                    </div>
+                  </div>
+                </label>
+
+                {/* الاستلام من المتجر */}
+                <label className="border rounded p-3 d-flex gap-3 align-items-start">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    className="form-check-input mt-1"
+                  />
+                  <div className="flex-grow-1 ms-2">
+                    <div className="fw-semibold">الاستلام من المتجر</div>
+                    <div className="text-muted small">
+                      استلم طلبك مباشرة من المتجر.
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            {/* الأزرار */}
+            <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 mb-md-0 mb-4">
+              <button
+                type="button"
+                className="w-fit btn text-secondary d-flex justify-content-start align-items-center gap-1"
+              >
+                <span className="fs-7 fw-semibold">العودة لعربة التسوق</span>
+              </button>
+              <button
+                type="submit"
+                className="w-100 w-md-fit btn btn-primary text-center py-2 py-md-4 px-2"
+              >
+                <span className="fs-7 fw-semibold">المتابعة لطريقة الشحن</span>
+              </button>
             </div>
           </form>
         </div>

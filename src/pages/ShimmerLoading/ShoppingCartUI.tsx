@@ -29,7 +29,7 @@ const ShoppingCartUI = () => {
             </div>
 
             {/* Cart  */}
-            <div className="col-12 col-lg-6 order-1 order-lg-2 " style={{ backgroundColor: "#F3F4F5" }}>
+            <div className="col-12 col-lg-6 order-1 order-lg-2" style={{ backgroundColor: "#F3F4F5" }}>
              <Cart />
             </div>
           </div>
