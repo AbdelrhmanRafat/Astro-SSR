@@ -20,3 +20,18 @@
 .shippingform-img-15 {
   height: 15px;
 }
+
+.form-floating > .form-select {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+
+  .fs-7 {
+    font-size: 13px !important;
+  }
+
+@media (min-width: 768px) {
+  .w-md-fit {
+    width: fit-content !important;
+  }
+}

@@ -73,18 +73,75 @@ const ShimmerForm = () => {
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* الأزرار Skeleton */}
-              <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 mb-md-0 mb-4">
-                {/* زر العودة Skeleton */}
-                <div className="placeholder-glow">
-                  <div className="placeholder rounded shimmerform-placeholder-40-140"></div>
+            {/* خيارات الدفع Skeleton */}
+            <div className="d-flex flex-column gap-2">
+              <div className="placeholder-glow">
+                <div className="placeholder rounded fw-bold shimmerform-placeholder-24-120"></div>
+              </div>
+              <div className="d-flex flex-column gap-3">
+                {/* بطاقة ائتمان Skeleton */}
+                <div className="border rounded p-3 d-flex gap-3 align-items-start placeholder-glow">
+                  <div className="placeholder rounded-circle mt-1" style={{width: '16px', height: '16px'}}></div>
+                  <div className="flex-grow-1 ms-2">
+                    <div className="placeholder rounded mb-2" style={{height: '18px', width: '120px'}}></div>
+                    <div className="placeholder rounded mb-2" style={{height: '14px', width: '280px'}}></div>
+                    <div className="d-flex gap-2 flex-wrap">
+                      <div className="placeholder rounded" style={{width: '30px', height: '20px'}}></div>
+                      <div className="placeholder rounded" style={{width: '30px', height: '20px'}}></div>
+                      <div className="placeholder rounded" style={{width: '30px', height: '20px'}}></div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* زر المتابعة Skeleton */}
-                <div className="placeholder-glow">
-                  <div className="placeholder rounded shimmerform-placeholder-56-160"></div>
+                {/* الدفع عند الاستلام Skeleton */}
+                <div className="border rounded p-3 d-flex gap-3 align-items-start placeholder-glow">
+                  <div className="placeholder rounded-circle mt-1" style={{width: '16px', height: '16px'}}></div>
+                  <div className="flex-grow-1 ms-2">
+                    <div className="placeholder rounded mb-2" style={{height: '18px', width: '140px'}}></div>
+                    <div className="placeholder rounded" style={{height: '14px', width: '180px'}}></div>
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            {/* خيارات التوصيل Skeleton */}
+            <div className="d-flex flex-column gap-2">
+              <div className="placeholder-glow">
+                <div className="placeholder rounded fw-bold shimmerform-placeholder-24-120"></div>
+              </div>
+              <div className="d-flex flex-column gap-3">
+                {/* توصيل إلى المنزل Skeleton */}
+                <div className="border rounded p-3 d-flex gap-3 align-items-start placeholder-glow">
+                  <div className="placeholder rounded-circle mt-1" style={{width: '16px', height: '16px'}}></div>
+                  <div className="flex-grow-1 ms-2">
+                    <div className="placeholder rounded mb-2" style={{height: '18px', width: '120px'}}></div>
+                    <div className="placeholder rounded" style={{height: '14px', width: '220px'}}></div>
+                  </div>
+                </div>
+
+                {/* الاستلام من المتجر Skeleton */}
+                <div className="border rounded p-3 d-flex gap-3 align-items-start placeholder-glow">
+                  <div className="placeholder rounded-circle mt-1" style={{width: '16px', height: '16px'}}></div>
+                  <div className="flex-grow-1 ms-2">
+                    <div className="placeholder rounded mb-2" style={{height: '18px', width: '140px'}}></div>
+                    <div className="placeholder rounded" style={{height: '14px', width: '200px'}}></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* الأزرار Skeleton */}
+            <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 mb-md-0 mb-4">
+              {/* زر العودة Skeleton */}
+              <div className="placeholder-glow">
+                <div className="placeholder rounded shimmerform-placeholder-40-140"></div>
+              </div>
+
+              {/* زر المتابعة Skeleton */}
+              <div className="placeholder-glow">
+                <div className="placeholder rounded shimmerform-placeholder-56-160"></div>
               </div>
             </div>
           </form>
