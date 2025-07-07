@@ -252,7 +252,7 @@ const ShippingForm: React.FC = () => {
               </button>
               <button
                 type="submit"
-                className="w-100 w-md-fit btn btn-primary text-center py-2 py-md-4 px-2"
+                className="w-100 w-md-fit btn btn-primary text-center py-2 py-md-4 px-2 rounded-4"
               >
                 <span className="fs-7 fw-semibold">المتابعة لطريقة الشحن</span>
               </button>

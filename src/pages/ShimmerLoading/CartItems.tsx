@@ -91,9 +91,8 @@ const CartItems: React.FC = () => {
       {cart.map((item) => (
         <div
           key={item.id}
-          className={`d-flex justify-content-between align-items-center py-2 border-bottom ${
-            deletingId === item.id ? "fade-out" : ""
-          }`}
+          className={`d-flex justify-content-between align-items-center py-2 border-bottom ${deletingId === item.id ? "fade-out" : ""
+            }`}
         >
           {/* Product Info */}
           <div className="d-flex align-items-center gap-3">
@@ -109,9 +108,8 @@ const CartItems: React.FC = () => {
                 }}
               />
               <span
-                className={`position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm ${
-                  updatingId === item.id ? "quantity-updating" : ""
-                }`}
+                className={`position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center shadow-sm ${updatingId === item.id ? "quantity-updating" : ""
+                  }`}
                 style={{
                   top: "-8px",
                   left: "-8px",
@@ -218,12 +216,12 @@ const CartItems: React.FC = () => {
               )}
             </div>
           </div>
-
           {/* Total Price */}
-          <div className="text-end">
-            <p className="fw-bold text-black mb-0">
-              ج.م {(item.price * item.quantity).toFixed(2)}
-            </p>
+          <div className="d-flex justify-content-end align-items-center gap-1">
+            <span className="fw-bold text-black mb-0">
+              {(item.price * item.quantity).toFixed(2)}
+            </span>
+            <span className="text-muted">ج.م</span>
           </div>
         </div>
       ))}

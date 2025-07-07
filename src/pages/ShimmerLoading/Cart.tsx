@@ -33,8 +33,9 @@ const Cart: React.FC = () => {
               <ChevronIcon open={showMobileSummary} />
               <span className="fw-bold text-black">ملخص الطلب</span>
             </div>
-            <div className="d-flex align-items-center gap-2">
-              <span className="fw-bold text-dark">ج.م {totalPrice}</span>
+            <div className="d-flex justify-content-end align-items-center gap-1">
+              <span className="fw-bold text-dark">{totalPrice}</span>
+              <span className="text-muted">ج.م</span>
             </div>
           </div>
 
@@ -55,10 +56,10 @@ const Cart: React.FC = () => {
             {/* Desktop & MD content with sticky */}
             <div className="row">
               <div className="d-none d-md-block col-md-9 col-12">
-                  <div className="mb-3">
-                    <h5 className="fw-bold text-dark mb-3 pb-2">ملخص الطلب</h5>
-                  </div>
-                  <OrderSummaryContent />
+                <div className="mb-3">
+                  <h5 className="fw-bold text-dark mb-3 pb-2">ملخص الطلب</h5>
+                </div>
+                <OrderSummaryContent />
               </div>
             </div>
           </div>
