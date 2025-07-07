@@ -1,0 +1,71 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"src": "^/_server-islands/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/_image/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/cart/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/Products/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/server/auth/login/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/server/auth/logout/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/server/auth/signup/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/server/cart/add-product-form/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/server/cart/delete-fromCart-form/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/server/cart/update-qty-form/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/ShimmerLoading/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/signin/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/signup/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/$",
+			"dest": "_render"
+		}
+	]
+}
