@@ -716,7 +716,7 @@ const ShoppingCartUI = () => {
 };
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "\u0639\u0631\u0628\u0629 \u0627\u0644\u062A\u0633\u0648\u0642" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="p-5 bg-white border-bottom border-primary"></div> ${renderComponent($$result2, "ShoppingCartUI", ShoppingCartUI, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/Users/macbook/Desktop/Astro/Astro-SSR-main/src/pages/ShimmerLoading/ShoppingCartUI/ShoppingCartUI", "client:component-export": "default" })} <div class="p-5 bg-light border-top border-primary"></div> ` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "\u0639\u0631\u0628\u0629 \u0627\u0644\u062A\u0633\u0648\u0642" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="p-5 bg-white border-bottom border-primary"></div> ${renderComponent($$result2, "ShoppingCartUI", ShoppingCartUI, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/Users/macbook/Desktop/Astro/Astro-SSR-main/src/components/ReactComponents/ShoppingCartUI/ShoppingCartUI", "client:component-export": "default" })} <div class="p-5 bg-light border-top border-primary"></div> ` })}`;
 }, "/Users/macbook/Desktop/Astro/Astro-SSR-main/src/pages/ShimmerLoading/index.astro", void 0);
 
 const $$file = "/Users/macbook/Desktop/Astro/Astro-SSR-main/src/pages/ShimmerLoading/index.astro";
