@@ -52,7 +52,7 @@ const Cart: React.FC = () => {
 
             {/* Desktop & MD content with sticky */}
             <div className="row">
-              <div className="d-none d-md-block col-md-9 col-12">
+              <div className="d-none d-lg-block col-lg-9 col-12">
                 <div className="mb-3">
                   <h5 className="fw-bold text-dark mb-3 pb-2">ملخص الطلب</h5>
                 </div>

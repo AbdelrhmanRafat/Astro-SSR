@@ -1,3 +1,5 @@
+import "./ChevronIcon.css";
+
 const ChevronIcon: React.FC<{ open: boolean }> = ({ open }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
