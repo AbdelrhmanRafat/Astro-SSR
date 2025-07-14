@@ -1,11 +1,12 @@
 import { useState } from "react";
 import './ShippingForm.css';
+import PaymentOptions from "../PaymentOptions/PaymentOptions";
+import DeliveryOptions from "../DeliveryOptions/DeliveryOptions";
+import CheckoutFormButtons from "../CheckoutFormButtons/CheckoutFormButtons";
+import AcceptCheckOutPolicy from "../AcceptCheckOutPolicy/AcceptCheckOutPolicy";
 
 const ShippingForm: React.FC = () => {
   const [mobile, setMobile] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("credit");
-  const [deliveryMethod, setDeliveryMethod] = useState("home");
-
   const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
@@ -145,102 +146,15 @@ const ShippingForm: React.FC = () => {
               </div>
             </div>
 
-            {/* خيارات الدفع */}
-            <div className="d-flex flex-column gap-2">
-              <h5 className="fw-bold text-dark">طريقة الدفع</h5>
-              <div className="d-flex flex-column gap-3">
+            {/*  Payment Options */}
+            <PaymentOptions />
 
-                {/* بطاقة ائتمان */}
-                <label className="border rounded p-3 d-flex gap-3 align-items-start">
-                  <input
-                    type="radio"
-                    name="payment"
-                    className="form-check-input mt-1"
-                    defaultChecked
-                  />
-                  <div className="flex-grow-1 ms-2">
-                    <div className="fw-semibold">بطاقة ائتمان</div>
-                    <div className="text-muted small">
-                      ادفع بأمان باستخدام بطاقة الائتمان الخاصة بك.
-                    </div>
-                    <div className="d-flex gap-2 flex-wrap mt-2">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="MasterCard" className="shippingform-img-15" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" className="shippingform-img-15" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png" alt="Orange" className="shippingform-img-15" />
-                    </div>
-                  </div>
-                </label>
-
-                {/* الدفع عند الاستلام */}
-                <label className="border rounded p-3 d-flex gap-3 align-items-start">
-                  <input
-                    type="radio"
-                    name="payment"
-                    className="form-check-input mt-1"
-                  />
-                  <div className="flex-grow-1 ms-2">
-                    <div className="fw-semibold">الدفع عند الاستلام</div>
-                    <div className="text-muted small">
-                      ادفع نقدًا عند الاستلام.
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            {/* خيارات التوصيل */}
-            <div className="d-flex flex-column gap-2">
-              <h5 className="fw-bold text-dark">طريقة التوصيل</h5>
-              <div className="d-flex flex-column gap-3">
-
-                {/* توصيل إلى المنزل */}
-                <label className="border rounded p-3 d-flex gap-3 align-items-start">
-                  <input
-                    type="radio"
-                    name="delivery"
-                    className="form-check-input mt-1"
-                    defaultChecked
-                  />
-                  <div className="flex-grow-1 ms-2">
-                    <div className="fw-semibold">توصيل إلى المنزل</div>
-                    <div className="text-muted small">
-                      سيتم توصيل طلبك إلى باب منزلك.
-                    </div>
-                  </div>
-                </label>
-
-                {/* الاستلام من المتجر */}
-                <label className="border rounded p-3 d-flex gap-3 align-items-start">
-                  <input
-                    type="radio"
-                    name="delivery"
-                    className="form-check-input mt-1"
-                  />
-                  <div className="flex-grow-1 ms-2">
-                    <div className="fw-semibold">الاستلام من المتجر</div>
-                    <div className="text-muted small">
-                      استلم طلبك مباشرة من المتجر.
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-
-            {/* الأزرار */}
-            <div className="d-flex flex-column-reverse flex-md-row justify-content-between align-items-center gap-3 mb-md-0 mb-4">
-              <button
-                type="button"
-                className="w-fit btn text-secondary d-flex justify-content-start align-items-center gap-1"
-              >
-                <span className="fs-7 fw-semibold">العودة لعربة التسوق</span>
-              </button>
-              <button
-                type="submit"
-                className="w-100 w-md-fit btn btn-primary text-center py-2 py-md-4 px-3 rounded-4"
-              >
-                <span className="fs-7 fw-semibold">المتابعة لطريقة الشحن</span>
-              </button>
-            </div>
+            {/*  Delivery Options */}
+            <DeliveryOptions />
+             {/* CheckBoxes Policy */}
+             <AcceptCheckOutPolicy />
+            {/* Buttons */}
+             <CheckoutFormButtons />
           </form>
         </div>
       </div>
