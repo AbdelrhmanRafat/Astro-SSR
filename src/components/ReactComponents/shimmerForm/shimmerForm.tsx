@@ -3,7 +3,7 @@ import './shimmerForm.css';
 
 const ShimmerForm = () => {
   return (
-    <div className="bg-white h-100 d-flex flex-column gap-3 pt-2 pt-md-0">
+    <div className="h-100 d-flex flex-column gap-3 pt-2 pt-md-0">
       <div className="container-lg w-100 px-0 px-md-3 mx-0 mx-md-auto row">
         <div className="d-flex justify-content-center justify-content-md-end align-items-center p-md-3">
 
@@ -65,7 +65,7 @@ const ShimmerForm = () => {
               {/* رقم الموبايل Skeleton */}
               <div className="w-100">
                 <div className="placeholder-glow">
-                  <div className="d-flex align-items-center justify-content-between border bg-white rounded-3 px-2 shimmerform-placeholder-58">
+                  <div className="d-flex align-items-center justify-content-between border rounded-3 px-2 shimmerform-placeholder-58">
                     <div className="placeholder rounded flex-grow-1 shimmerform-placeholder-40"></div>
                     <div className="flex-shrink-0">
                       <div className="placeholder rounded shimmerform-placeholder-20"></div>

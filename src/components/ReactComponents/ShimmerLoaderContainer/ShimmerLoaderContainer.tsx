@@ -2,13 +2,13 @@ import React from 'react';
 import ShimmerForm from '../shimmerForm/shimmerForm';
 import ShimmerCart from '../ShimmerCart/ShimmerCart';
 
-const ShimmerLoader = () => {
+const ShimmerLoaderContainer = () => {
   return (
     <div dir="rtl" className="bg-white">
       <div className="w-100">
         <div className="row g-0">
           {/* ✅ Shimmer Form Placeholder */}
-          <div className="col-12 col-lg-6 order-2 order-lg-1">
+          <div className="col-12 col-lg-6 order-2 order-lg-1 bg-white">
             <ShimmerForm />
           </div>
 
@@ -22,4 +22,4 @@ const ShimmerLoader = () => {
   );
 }
 
-export default ShimmerLoader;
+export default ShimmerLoaderContainer;

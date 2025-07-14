@@ -1,7 +1,7 @@
 import React from "react";
 import CheckoutButton from "../CheckoutButton/CheckoutButton";
 
-const ProductOutOfStoreForm: React.FC = () => {
+const ProductOutOfStock: React.FC = () => {
   const handleCheckoutClick = () => {
     console.log("Navigate to Home Page");
   };
@@ -46,4 +46,4 @@ const ProductOutOfStoreForm: React.FC = () => {
   );
 };
 
-export default ProductOutOfStoreForm;
+export default ProductOutOfStock;

@@ -1,24 +1,20 @@
-.shippingform-select-custom {
+.checkoutform-select-custom {
   appearance: none;
   background-repeat: no-repeat;
   background-position: left 1rem center;
   background-size: 1rem;
 }
 
-.shippingform-select-country {
+.checkoutform-select-country {
   background-image: url("data:image/svg+xml;utf8,<svg fill='%23606060' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M1.5 5.5l6 6 6-6'/></svg>");
 }
 
-.shippingform-select-governorate {
+.checkoutform-select-governorate {
   background-image: url("data:image/svg+xml;utf8,<svg fill='%23606060' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'><path d='M1.5 5.5l6 6 6-6'/></svg>");
 }
 
-.shippingform-input-mobile {
+.checkoutform-input-mobile {
   padding-right: 0.75rem;
-}
-
-.shippingform-img-15 {
-  height: 15px;
 }
 
 .form-floating > .form-select {

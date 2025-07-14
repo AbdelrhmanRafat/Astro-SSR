@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import "./CartItems.css";
+import "./CheckoutCartItems.css";
 import { useCartStore } from "../../../lib/Stores/cartStore";
 
 interface Product {
@@ -12,7 +12,7 @@ interface Product {
   maxQty: number;
 }
 
-const CartItems: React.FC = () => {
+const CheckoutCartItems: React.FC = () => {
   const [cart, setCart] = useState<Product[]>([
     {
       id: 1,
@@ -232,4 +232,4 @@ const CartItems: React.FC = () => {
   );
 };
 
-export default CartItems;
+export default CheckoutCartItems;

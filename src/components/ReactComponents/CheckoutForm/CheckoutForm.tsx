@@ -1,11 +1,11 @@
 import { useState } from "react";
-import './ShippingForm.css';
+import './CheckoutForm.css';
 import PaymentOptions from "../PaymentOptions/PaymentOptions";
 import DeliveryOptions from "../DeliveryOptions/DeliveryOptions";
 import CheckoutFormButtons from "../CheckoutFormButtons/CheckoutFormButtons";
 import AcceptCheckOutPolicy from "../AcceptCheckOutPolicy/AcceptCheckOutPolicy";
 
-const ShippingForm: React.FC = () => {
+const CheckoutForm: React.FC = () => {
   const [mobile, setMobile] = useState("");
   const handleMobileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -43,7 +43,7 @@ const ShippingForm: React.FC = () => {
               <div className="form-floating">
                 <select
                   id="country"
-                  className="form-select fs-6 shippingform-select-custom shippingform-select-country"
+                  className="form-select fs-6 checkoutform-select-custom checkoutform-select-country"
                 >
                   <option value="">اختر البلد</option>
                   <option>مصر</option>
@@ -107,7 +107,7 @@ const ShippingForm: React.FC = () => {
                   <div className="form-floating">
                     <select
                       id="governorate"
-                      className="form-select fs-6 shippingform-select-custom shippingform-select-governorate"
+                      className="form-select fs-6 checkoutform-select-custom checkoutform-select-governorate"
                     >
                       <option value="">اختر المحافظة</option>
                       <option>القاهرة</option>
@@ -128,7 +128,7 @@ const ShippingForm: React.FC = () => {
                       id="mobile"
                       value={mobile}
                       onChange={handleMobileChange}
-                      className="form-control border-0 shadow-none bg-transparent fs-6 shippingform-input-mobile"
+                      className="form-control border-0 shadow-none bg-transparent fs-6 checkoutform-input-mobile"
                       placeholder="رقم الموبايل"
                     />
                     <label htmlFor="mobile" className="text-muted fs-7">رقم الموبايل للتواصل بخصوص الطلب</label>
@@ -162,4 +162,4 @@ const ShippingForm: React.FC = () => {
   );
 };
 
-export default ShippingForm;
+export default CheckoutForm;

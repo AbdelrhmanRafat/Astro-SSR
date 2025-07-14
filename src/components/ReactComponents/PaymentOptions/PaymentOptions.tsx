@@ -1,3 +1,4 @@
+import "./PaymentOptions.css";
 import React, { useState } from 'react';
 
 const PaymentOptions: React.FC = () => {
@@ -31,17 +32,17 @@ const PaymentOptions: React.FC = () => {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png"
                   alt="MasterCard"
-                  className="shippingform-img-15"
+                  className="checkoutform-img-15"
                 />
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png"
                   alt="Visa"
-                  className="shippingform-img-15"
+                  className="checkoutform-img-15"
                 />
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/200px-Orange_logo.svg.png"
                   alt="Orange"
-                  className="shippingform-img-15"
+                  className="checkoutform-img-15"
                 />
               </div>
             </div>

@@ -1,11 +1,11 @@
-import "./Cart.css";
+import "./CheckoutCart.css";
 import React, { useState, useRef, useEffect } from "react";
 import { useCartStore } from "../../../lib/Stores/cartStore";
 import ChevronIcon from "../ChevronIcon/ChevronIcon";
-import OrderSummaryContent from "../OrderSummaryContent/OrderSummaryContent";
+import CheckOutOrderSummary from "../CheckOutOrderSummary/CheckOutOrderSummary";
 
 
-const Cart: React.FC = () => {
+const CheckoutCart: React.FC = () => {
   const [showMobileSummary, setShowMobileSummary] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState("0px");
@@ -47,7 +47,7 @@ const Cart: React.FC = () => {
               style={{ height: showMobileSummary ? height : "0px" }}
               ref={contentRef}
             >
-              <OrderSummaryContent />
+              <CheckOutOrderSummary />
             </div>
 
             {/* Desktop & MD content with sticky */}
@@ -56,7 +56,7 @@ const Cart: React.FC = () => {
                 <div className="mb-3">
                   <h5 className="fw-bold text-dark mb-3 pb-2">ملخص الطلب</h5>
                 </div>
-                <OrderSummaryContent />
+                <CheckOutOrderSummary />
               </div>
             </div>
           </div>
@@ -66,4 +66,4 @@ const Cart: React.FC = () => {
   );
 };
 
-export default Cart;
+export default CheckoutCart;

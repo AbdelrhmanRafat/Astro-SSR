@@ -1,16 +1,16 @@
 import React from 'react';
 import { useCartStore } from '../../../lib/Stores/cartStore';
-import CartItems from '../CartItems/CartItems';
 import CouponInput from '../CuponState/CuponState';
+import CheckoutCartItems from '../CheckoutCartItems/CheckoutCartItems';
 
-const OrderSummary: React.FC = () => {
+const CheckOutOrderSummary: React.FC = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
   const numberOfProducts = useCartStore((state) => state.numberOfProducts); // ✅ get numberOfProducts
 
   return (
     <div className="d-flex flex-column gap-2">
       {/* Product Items */}
-      <CartItems />
+      <CheckoutCartItems />
 
       {/* Show only if numberOfProducts > 0 */}
       {numberOfProducts > 0 && (
@@ -77,4 +77,4 @@ const OrderSummary: React.FC = () => {
   );
 };
 
-export default OrderSummary;
+export default CheckOutOrderSummary;

@@ -1,13 +1,13 @@
 import "../../../styles/global.css";
-import "./ShoppingCartUI.css";
+import "./ChckoutContainer.css";
 import React, { useState, useEffect } from "react";
-import ShimmerLoader from "../ShimmerLoader/ShimmerLoader";
-import ShippingForm from "../ShippingForm/ShippingForm";
-import Cart from "../Cart/Cart";
 import { useCartStore } from "../../../lib/Stores/cartStore";
-import ProductOutOfStoreForm from "../ProductOutOfStoreForm/ProductOutOfStoreForm";
+import ProductOutOfStock from "../ProductOutOfStock/ProductOutOfStock";
+import ShimmerLoaderContainer from "../ShimmerLoaderContainer/ShimmerLoaderContainer";
+import CheckoutCart from "../CheckoutCart/CheckoutCart";
+import CheckoutForm from "../CheckoutForm/CheckoutForm";
 
-const ShoppingCartUI = () => {
+const ChckoutContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { numberOfProducts } = useCartStore();
 
@@ -23,21 +23,21 @@ const ShoppingCartUI = () => {
     <div dir="rtl" className="bg-white">
       <div className="w-100">
         {isLoading ? (
-          <ShimmerLoader />
+          <ShimmerLoaderContainer />
         ) : (
           <div className="row g-0">
             {/* Shipping Form */}
             <div className="col-12 col-lg-6 order-2 order-lg-1 bg-white">
               {numberOfProducts === 0 || numberOfProducts === undefined ? (
-                <ProductOutOfStoreForm />
+                <ProductOutOfStock />
               ) : (
-                <ShippingForm />
+                <CheckoutForm />
               )}
             </div>
 
             {/* Cart */}
             <div className="col-12 col-lg-6 order-1 order-lg-2 shoppingcartui-cart-bg">
-              <Cart />
+              <CheckoutCart />
             </div>
           </div>
         )}
@@ -46,4 +46,4 @@ const ShoppingCartUI = () => {
   );
 };
 
-export default ShoppingCartUI;
+export default ChckoutContainer;

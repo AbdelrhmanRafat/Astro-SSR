@@ -2,11 +2,11 @@
 import "../../styles/global.css"
 // ProductsPage.astro
 import Layout from "../../layouts/Layout.astro";
-import ShoppingCartUI from "../../components/ReactComponents/ShoppingCartUI/ShoppingCartUI";
+import ChckoutContainer from "../../components/ReactComponents/ChckoutContainer/ChckoutContainer";
 
 ---
 <Layout title="عربة التسوق">
 <div class="p-5 bg-white border-bottom border-primary"></div>
-  <ShoppingCartUI client:load />
+  <ChckoutContainer client:load />
   <div class="p-5 bg-light border-top border-primary"></div>
 </Layout>

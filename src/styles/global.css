@@ -2,11 +2,3 @@
 /* src/styles/global.css */
 @import "bootstrap/dist/css/bootstrap.min.css";
 @import "bootstrap/dist/css/bootstrap.rtl.min.css";
-
-
-@media (min-width: 768px) {
-    .min-vh-md-100 {
-      min-height: 100vh !important;
-    }
-  }
-
