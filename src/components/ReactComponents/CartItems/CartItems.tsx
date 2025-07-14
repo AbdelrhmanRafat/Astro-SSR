@@ -39,16 +39,19 @@ const CartItems: React.FC = () => {
   const [deletingId, setDeletingId] = useState<number | null>(null);
   const [updatingId, setUpdatingId] = useState<number | null>(null);
 
-  const { setTotalPrice } = useCartStore(); // ✅ Zustand action
+  const { setTotalPrice, setNumberOfProducts } = useCartStore(); // Zustand actions
 
-  // ✅ Update total price every time cart changes
+  // Update total price and number of products every time cart changes
   useEffect(() => {
     const total = cart.reduce(
       (acc, item) => acc + item.price * item.quantity,
       0
     );
+    const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+
     setTotalPrice(total);
-  }, [cart, setTotalPrice]);
+    setNumberOfProducts(totalQty);
+  }, [cart, setTotalPrice, setNumberOfProducts]);
 
   const incrementQty = useCallback((id: number) => {
     setUpdatingId(id);
@@ -130,7 +133,7 @@ const CartItems: React.FC = () => {
                 {item.code}
               </p>
 
-              {/* Enhanced Delete Button */}
+              {/* Delete Button */}
               <button
                 className="btn btn-link p-0 text-danger small delete-btn-enhanced"
                 onClick={() => deleteItem(item.id)}
@@ -153,7 +156,7 @@ const CartItems: React.FC = () => {
                 )}
               </button>
 
-              {/* Enhanced Qty Controls */}
+              {/* Qty Controls */}
               <div
                 className="d-flex align-items-center border rounded overflow-hidden mt-1 qty-controls"
                 style={{ width: "110px" }}
