@@ -1,3 +1,23 @@
+/**
+ * @file DeliveryOptions.tsx
+ * @description A component that allows users to choose between home delivery and in-store pickup.
+ * If in-store pickup is selected, a dropdown of available stores is displayed.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered delivery options component.
+ *
+ * @logic
+ * - The component uses `useState` to manage the selected delivery method (`selectedDelivery`) and the selected store (`selectedStore`).
+ * - A mock array `mockStores` provides a list of store locations.
+ * - `handleDeliveryChange`: A function that updates the selected delivery method. It also resets the selected store if the user switches away from in-store pickup.
+ * - `handleStoreChange`: A function that updates the selected store from the dropdown.
+ * - The component renders two radio buttons for "Home Delivery" and "In-store Pickup".
+ * - A dropdown to select a store is conditionally rendered only when "In-store Pickup" is the selected delivery method.
+ *
+ * @integration
+ * - This component is designed to be part of the `CheckoutForm`.
+ * - The state of the selected delivery option and store would typically be lifted up to the parent `CheckoutForm` to be included in the final order details.
+ */
 import React, { useState } from 'react';
 
 // Mock array of store names

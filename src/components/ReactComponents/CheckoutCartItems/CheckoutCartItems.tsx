@@ -1,3 +1,24 @@
+/**
+ * @file CheckoutCartItems.tsx
+ * @description This component renders the list of items in the shopping cart.
+ * It allows users to increment, decrement, and delete items from the cart.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered list of cart items.
+ *
+ * @logic
+ * - The component maintains a local state `cart` which is initialized with mock product data.
+ * - It uses `useState` to manage the state of deleting and updating items (`deletingId`, `updatingId`) to provide visual feedback.
+ * - It uses the `useCartStore` to update the global state for `totalPrice` and `numberOfProducts` whenever the local `cart` state changes.
+ * - `incrementQty`, `decrementQty`, and `deleteItem` are memoized functions (`useCallback`) that handle the logic for modifying the cart. They include a `setTimeout` to simulate an asynchronous operation.
+ * - The component maps over the `cart` array to render each item with its details, including an image, name, price, and quantity controls.
+ * - It provides visual feedback during updates, such as a fade-out animation on deletion and spinners on quantity changes.
+ *
+ * @integration
+ * - This component is intended to be used within the `CheckOutOrderSummary` component.
+ * - It relies on the `useCartStore` to propagate changes to the total price and number of products to other components.
+ * - The initial state of the cart is hardcoded in this component. In a real application, this data would likely come from a prop or be fetched from an API.
+ */
 import React, { useState, useCallback, useEffect } from "react";
 import "./CheckoutCartItems.css";
 import { useCartStore } from "../../../lib/Stores/cartStore";

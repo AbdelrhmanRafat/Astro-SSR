@@ -1,3 +1,21 @@
+/**
+ * @file PaymentOptions.tsx
+ * @description A component that allows users to select a payment method, such as credit card or cash on delivery.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered payment options component.
+ *
+ * @logic
+ * - The component uses the `useState` hook to manage the selected payment method (`selectedPayment`).
+ * - `handlePaymentChange`: A function that updates the `selectedPayment` state when the user chooses a different option.
+ * - The component renders two radio buttons for "Credit Card" and "Cash on Delivery".
+ * - The credit card option displays logos of accepted card providers.
+ * - A note is included to inform the user about a discount for online payments.
+ *
+ * @integration
+ * - This component is designed to be part of the `CheckoutForm`.
+ * - The selected payment method would typically be lifted up to the parent `CheckoutForm` to be included in the final order details.
+ */
 import "./PaymentOptions.css";
 import React, { useState } from 'react';
 

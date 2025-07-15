@@ -1,3 +1,31 @@
+/**
+ * @file CheckoutForm.tsx
+ * @description This component renders the main form for the checkout process, including fields for contact information, shipping address, payment options, and delivery options.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered checkout form.
+ *
+ * @logic
+ * - The component uses the `useState` hook to manage the state of the mobile number input (`mobile`).
+ * - `handleMobileChange`: A function that validates the mobile number input to ensure it only contains digits.
+ * - The form is structured into several sections:
+ *   - Contact Information: For email or phone number.
+ *   - Shipping Address: Including country, name, address, city, and governorate.
+ *   - Payment Options: Rendered via the `PaymentOptions` component.
+ *   - Delivery Options: Rendered via the `DeliveryOptions` component.
+ *   - Checkout Policy: Rendered via the `AcceptCheckOutPolicy` component.
+ *   - Form Buttons: Rendered via the `CheckoutFormButtons` component.
+ * - The form uses Bootstrap classes for layout and styling.
+ *
+ * @integration
+ * - This component is a central part of the `ChckoutContainer` and is displayed alongside the `CheckoutCart`.
+ * - It integrates several child components to handle specific parts of the form:
+ *   - `PaymentOptions`: For selecting a payment method.
+ *   - `DeliveryOptions`: For choosing a delivery option.
+ *   - `AcceptCheckOutPolicy`: For agreeing to the terms.
+ *   - `CheckoutFormButtons`: For form submission and other actions.
+ * - This component does not currently implement form submission logic or validation beyond the mobile number input.
+ */
 import { useState } from "react";
 import './CheckoutForm.css';
 import PaymentOptions from "../PaymentOptions/PaymentOptions";

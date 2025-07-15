@@ -1,3 +1,25 @@
+/**
+ * @file ShimmerForm.tsx
+ * @description A shimmer loading placeholder component for the checkout form.
+ * It mimics the layout of the `CheckoutForm` to provide a visual cue that the form is loading.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered shimmer form component.
+ *
+ * @logic
+ * - The component is composed of static placeholder elements that are styled to resemble the actual form fields.
+ * - It uses a shimmer animation, defined in `shimmerForm.css`, to create a loading effect.
+ * - The layout includes placeholders for all major sections of the checkout form, including:
+ *   - Contact Information
+ *   - Shipping Address
+ *   - Payment Options
+ *   - Delivery Options
+ *   - Action Buttons
+ *
+ * @integration
+ * - This component is used within the `ShimmerLoaderContainer` to represent the loading state of the form.
+ * - It is intended to be displayed alongside the `ShimmerCart` component to create a complete shimmer loading screen.
+ */
 import React from 'react';
 import './shimmerForm.css';
 

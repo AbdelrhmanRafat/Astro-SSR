@@ -1,3 +1,19 @@
+/**
+ * @file CouponInput.tsx
+ * @description A component that provides an input field for users to enter a coupon code and a button to apply it.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered coupon input and button.
+ *
+ * @logic
+ * - The component uses the `useState` hook to manage the value of the coupon code input (`code`).
+ * - The "Apply Code" button is conditionally styled. It uses `btn-primary` when there is text in the input, and `btn-outline-secondary` when the input is empty.
+ * - The component does not currently implement the logic for validating the coupon code or applying a discount.
+ *
+ * @integration
+ * - This component is used within the `CheckOutOrderSummary` to allow users to apply a discount to their order.
+ * - It is self-contained and does not depend on any other components.
+ */
 import { useState } from 'react';
 
 function CouponInput() {

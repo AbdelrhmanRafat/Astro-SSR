@@ -1,3 +1,25 @@
+/**
+ * @file CheckoutCart.tsx
+ * @description This component serves as the main container for the shopping cart summary in the checkout process.
+ * It features a responsive design with a collapsible summary for mobile view and a sticky summary for desktop view.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered CheckoutCart component.
+ *
+ * @logic
+ * - The component uses `useState` to manage the visibility of the order summary on mobile (`showMobileSummary`).
+ * - It uses `useRef` and `useEffect` to dynamically calculate and set the height of the collapsible content for a smooth animation.
+ * - It subscribes to the `useCartStore` to get the `totalPrice` and display it in the header.
+ * - The mobile view includes a toggle button that expands or collapses the order summary.
+ * - The desktop view displays the order summary in a sticky column, so it remains visible while scrolling.
+ *
+ * @integration
+ * - This component is a key part of the `ChckoutContainer`, where it is displayed alongside the `CheckoutForm`.
+ * - It depends on the following child components:
+ *   - `ChevronIcon`: To indicate the collapsible state of the mobile summary.
+ *   - `CheckOutOrderSummary`: To render the actual content of the order summary.
+ * - It relies on `useCartStore` for data, so it must be used in an application where this store is properly initialized.
+ */
 import "./CheckoutCart.css";
 import React, { useState, useRef, useEffect } from "react";
 import { useCartStore } from "../../../lib/Stores/cartStore";

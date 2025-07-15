@@ -1,3 +1,26 @@
+/**
+ * @file CheckOutOrderSummary.tsx
+ * @description This component displays a summary of the order, including the cart items, coupon input, and a breakdown of the total cost.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered CheckOutOrderSummary component.
+ *
+ * @logic
+ * - The component subscribes to a `useCartStore` to get the `totalPrice` and `numberOfProducts` from the global state.
+ * - It conditionally renders the `CouponInput` and additional notes only if there are products in the cart (`numberOfProducts > 0`).
+ * - It displays a breakdown of the costs, including:
+ *   - Subtotal: The `totalPrice` from the cart store.
+ *   - Shipping: A hardcoded value (e.g., 50.00).
+ *   - Taxes: A hardcoded value (e.g., 25.00).
+ * - The final total is displayed, which currently reflects the `totalPrice` from the store. Note that the hardcoded shipping and taxes are not added to the final total in this component.
+ *
+ * @integration
+ * - This component is designed to be placed within the `CheckoutCart` component.
+ * - It depends on the following child components:
+ *   - `CheckoutCartItems`: To display the list of items in the cart.
+ *   - `CouponInput`: To allow the user to enter a coupon code.
+ * - It relies on the `useCartStore` for its data, so it must be used in an application where this store is properly initialized.
+ */
 import React from 'react';
 import { useCartStore } from '../../../lib/Stores/cartStore';
 import CouponInput from '../CuponState/CuponState';

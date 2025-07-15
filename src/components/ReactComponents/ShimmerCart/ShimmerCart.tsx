@@ -1,3 +1,21 @@
+/**
+ * @file ShimmerCart.tsx
+ * @description A shimmer loading placeholder component for the checkout cart.
+ * It mimics the layout of the `CheckoutCart` and `CheckOutOrderSummary` components to provide a seamless loading experience.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered shimmer cart component.
+ *
+ * @logic
+ * - The component consists of a static layout with placeholder elements that have a shimmer animation.
+ * - The layout includes placeholders for the cart header, product items, coupon input, notes, and the totals section.
+ * - The shimmer effect is achieved using CSS animations defined in `ShimmerCart.css`.
+ * - The component is only displayed on larger screens (d-lg-block).
+ *
+ * @integration
+ * - This component is used within the `ShimmerLoaderContainer` to represent the loading state of the cart.
+ * - It is intended to be displayed alongside the `shimmerForm` component to create a complete shimmer loading screen for the checkout page.
+ */
 import React from 'react';
 import './ShimmerCart.css';
 

@@ -1,3 +1,22 @@
+/**
+ * @file AcceptCheckOutPolicy.tsx
+ * @description This component renders checkboxes for accepting the shipping policy and opting for a gift option.
+ * It manages the state of these checkboxes and is typically integrated into a checkout form.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered AcceptCheckOutPolicy component.
+ *
+ * @logic
+ * - The component uses the `useState` hook to manage the state of two checkboxes:
+ *   - `shippingPolicyAccepted`: A boolean state to track if the shipping policy is accepted.
+ *   - `giftOptionSelected`: A boolean state to track if the gift option is selected.
+ * - `handleShippingPolicyChange`: A function that updates the `shippingPolicyAccepted` state when the user interacts with the shipping policy checkbox.
+ * - `handleGiftOptionChange`: A function that updates the `giftOptionSelected` state when the user interacts with the gift option checkbox.
+ *
+ * @integration
+ * - This component is designed to be part of a larger checkout form.
+ * - The state of the checkboxes can be lifted up to the parent component to influence other parts of the application, such as enabling a "Proceed to Payment" button or adding a gift-wrapping fee to the order total.
+ */
 import React, { useState } from 'react';
 
 const AcceptCheckOutPolicy: React.FC = () => {
